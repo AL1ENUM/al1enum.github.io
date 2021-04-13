@@ -27,6 +27,10 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: al1enum
 github_username:  al1enum
 
+minima:
+  skin: dark
+  date_format: "%b %-d, %Y"
+
 # Build settings
 theme: minima
 plugins:
@@ -50,6 +54,3 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-minima:
-  skin: dark
-  date_format: "%b %-d, %Y"
