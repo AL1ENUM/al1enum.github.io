@@ -50,7 +50,6 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
 minima:
   skin: dark
   date_format: "%b %-d, %Y"
