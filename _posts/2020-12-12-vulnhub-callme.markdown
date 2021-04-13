@@ -15,7 +15,7 @@ You’ll find this vm here :  `https://www.vulnhub.com/entry/callme-1,615/`
 - Nmap found three open ports: `22`, `111` and `2323`
 - For now let's focus on port `2323`
 
-![image](/assets/img/callme/1.png)
+![image](/assets/img/callme/1.PNG)
 
 #### Finding correct username
 
@@ -23,11 +23,11 @@ You’ll find this vm here :  `https://www.vulnhub.com/entry/callme-1,615/`
 - After the login attempt with a random credentials, the message "user does not exist" appeared
 - This will help us to identify the valid usernames
 
-![image](/assets/img/callme/2.png)
+![image](/assets/img/callme/2.PNG)
 
 I tried common username like admin, and the message "user does not exist" not appeared.<br> So, `admin` is a valid username
 
-![image](/assets/img/callme/3.png)
+![image](/assets/img/callme/3.PNG)
 
 ####  Creating brute force script
 
@@ -61,11 +61,11 @@ with open('10-million-password-list-top-1000000.txt') as file:
 
 - After a few minutes the password found
 
-![image](/assets/img/callme/4.png)
+![image](/assets/img/callme/4.PNG)
 
 Each time we successfully log in to the system, it returns a random number in words.<br>Let's understand what it means
 
-![image](/assets/img/callme/5.png)
+![image](/assets/img/callme/5.PNG)
 
 #### Tcpdump to understand
 
@@ -73,7 +73,7 @@ Each time we successfully log in to the system, it returns a random number in wo
 
 We understand that every time we successfully connect to the server, it tries to connect to the port of our system that it had previously sent in a number with words. For example, if the server sends `ONE THOUSAND FOUR HUNDRED  TWELVE` it tries to connect to our system to port `1412`
 
-![image](/assets/img/callme/6.png)
+![image](/assets/img/callme/6.PNG)
 
 #### Creating login & listener script
 
@@ -109,14 +109,14 @@ while True:
 - After running the script we have the shell
 
 
-![image](/assets/img/callme/7.png)
+![image](/assets/img/callme/7.PNG)
 
 
 #### SSH Login, avoid wine shell
 
-![image](/assets/img/callme/8.png)
+![image](/assets/img/callme/8.PNG)
 
-![image](/assets/img/callme/9.png)
+![image](/assets/img/callme/9.PNG)
 
 #### Searching fox's password
 
@@ -125,19 +125,19 @@ cat startup
 find / -name "recallserver.exe" 2>/dev/null
 ```
 
-![image](/assets/img/callme/10.png)
+![image](/assets/img/callme/10.PNG)
 
 - strings command not found so we need to download recallserver.exe locally
 
-![image](/assets/img/callme/11.png)
+![image](/assets/img/callme/11.PNG)
 
 - We found the possible password for user fox, the possible password is `tutankamenFERILLI`
 
-![image](/assets/img/callme/12.png)
+![image](/assets/img/callme/12.PNG)
 
 #### Privileges Escalation
 
-![image](/assets/img/callme/13.png)
+![image](/assets/img/callme/13.PNG)
 
 - Writing a user to /etc/passwd locally
 
@@ -150,7 +150,7 @@ Verifying - Password: alienum
 
 ``` echo 'alien:$1$dccSREO8$l8xVLythU9r4WQ1/4R1tq/:0:0::/root:/bin/bash' >> /etc/passwd```
 
-![image](/assets/img/callme/14.png)
+![image](/assets/img/callme/14.PNG)
 
 - In the target system
 
@@ -158,8 +158,8 @@ Verifying - Password: alienum
  sudo mount.nfs 10.0.2.106:/etc /etc
 ```
 
-![image](/assets/img/callme/15.png)
+![image](/assets/img/callme/15.PNG)
 
 #### Rooted
 
-![image](/assets/img/callme/16.png)
+![image](/assets/img/callme/16.PNG)

