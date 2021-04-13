@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "VulnHub - KBVULN: 1"
+date:   2020-10-13 10:10:05 +0300
+categories: [vulnhub,walkthrough]
+pin: true
+tags: []
+---
+
+##  Video
+
+<iframe width="700" height="415" src="https://www.youtube.com/embed/4WbHnzJovfY" frameborder="0" allowfullscreen></iframe>
