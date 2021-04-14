@@ -87,7 +87,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 /index.php            (Status: 200) [Size: 9288]                                         
 /robots.txt           (Status: 200) [Size: 30]                                           
 /fuel                 (Status: 301) [Size: 241] [--> http://10.0.2.227/structure/fuel/] 
-
+```
 
 -  /structure/fuel
 
