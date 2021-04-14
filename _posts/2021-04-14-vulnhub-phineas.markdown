@@ -60,7 +60,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 /structure            (Status: 301) [Size: 236] [--> http://10.0.2.227/structure/]
 ```
 
-- `/structure`
+- /structure
 
 ![image](/assets/img/phineas/1.PNG)
 
@@ -87,7 +87,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 /fuel                 (Status: 301) [Size: 241] [--> http://10.0.2.227/structure/fuel/] 
 
 
-- `/structure/fuel`
+-  /structure/fuel
 
 ```sh
 ┌──(alienum㉿kali)-[~]
@@ -148,6 +148,7 @@ Shellcodes: No Results
 ```
 
 ## Edited Script
+
 ```python
 # Exploit Title: fuel CMS 1.4.1 - Remote Code Execution (1)
 # Date: 2019-07-19
