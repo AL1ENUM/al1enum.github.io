@@ -243,7 +243,7 @@ $db['default'] = array(
 
 ## SSH Login
 
-Credentials 'anna` : `H993hfkNNid5kk`
+Credentials `anna` : `H993hfkNNid5kk`
 
 ```sh
 [anna@phineas Desktop]$ ls
