@@ -124,15 +124,15 @@ Version: v1.0.3 (9dad6e1) - 04/15/21 - Ronnie Flathers @ropnop
 
 - Theory
 
- The **relative identifier** (RID) is a variable length number that is assigned to objects at creation and becomes part of the objects [Security Identifier] (SID) that uniquely identifies an account or group within a domain. The Relative ID Master allocates security RIDs to Domain Controllers to assign to new Active Directory security principals (users, groups or computer objects). It also manages objects moving between domains.
+ The *relative identifier* (RID) is a variable length number that is assigned to objects at creation and becomes part of the objects [Security Identifier] (SID) that uniquely identifies an account or group within a domain. The Relative ID Master allocates security RIDs to Domain Controllers to assign to new Active Directory security principals (users, groups or computer objects). It also manages objects moving between domains.
 
- ## What is SID ?
+## Wha is SID ?
 
  - Theory
 
 The **SID** (Security IDentifier) is a unique ID number that a computer or domain controller uses to identify you. It is a string of alphanumeric characters assigned to each user on a Windows computer, or to each user, group, and computer on a domain-controlled network.
 
- ## Crackmapexec
+## Crackmapexec
 
  ```sh
 ┌──(alienum㉿kali)-[~/kerbrute-ropnop]
