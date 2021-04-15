@@ -75,7 +75,7 @@ Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
 
 Host script results:
 |_clock-skew: mean: 1s, deviation: 0s, median: 1s
-|_smb2-security-mode: SMB: Couldn't find a NetBIOS name that works for the server. Sorry!
+|_smb2-security-mode: SMB: Couldnt find a NetBIOS name that works for the server. Sorry!
 |_smb2-time: ERROR: Script execution failed (use -d to debug)
 
 TRACEROUTE (using port 110/tcp)
@@ -124,7 +124,7 @@ Version: v1.0.3 (9dad6e1) - 04/15/21 - Ronnie Flathers @ropnop
 
 - Theory
 
- The **relative identifier** (RID) is a variable length number that is assigned to objects at creation and becomes part of the object's [Security Identifier] (SID) that uniquely identifies an account or group within a domain. The Relative ID Master allocates security RIDs to Domain Controllers to assign to new Active Directory security principals (users, groups or computer objects). It also manages objects moving between domains.
+ The **relative identifier** (RID) is a variable length number that is assigned to objects at creation and becomes part of the objects [Security Identifier] (SID) that uniquely identifies an account or group within a domain. The Relative ID Master allocates security RIDs to Domain Controllers to assign to new Active Directory security principals (users, groups or computer objects). It also manages objects moving between domains.
 
  ## What is SID ?
 
