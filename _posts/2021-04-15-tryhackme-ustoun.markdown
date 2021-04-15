@@ -4,7 +4,7 @@ title:  "TryHackMe - USTOUN"
 date:   2021-04-15 10:10:05 +0300
 categories: [tryhackme,walkthrough]
 pin: true
-tags: [kerbrute,crackmapexec,nmap,windows,Active Directory,Base64]
+tags: [kerbrute,crackmapexec,nmap,windows,Active Directory,printspoofer,SetImpersonatePrivilege,powershell]
 ---
 
 ## USTOUN - TryHackMe
