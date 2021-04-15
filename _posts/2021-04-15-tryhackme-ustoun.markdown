@@ -93,7 +93,7 @@ Nmap done: 1 IP address (1 host up) scanned in 1851.51 seconds
 ## Kerbrute | Enum Users
 ```sh
 ┌──(alienum㉿kali)-[~/kerbrute-ropnop]
-└─$ ./kerbrute_linux_amd64 userenum -d ustoun.local --dc ustoun.local /usr/share/wordlists/SecLists/Usernames/cirt-default-usernames.txt                                                                                                  1 ⨯
+└─$ ./kerbrute_linux_amd64 userenum -d ustoun.local --dc ustoun.local /usr/share/wordlists/SecLists/Usernames/cirt-default-usernames.txt
 
     __             __               __
    / /_____  _____/ /_  _______  __/ /____
