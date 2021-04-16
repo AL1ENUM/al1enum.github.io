@@ -79,8 +79,6 @@ Scanning 1 hosts, 51 communities
 
 ## MIB Enumeration
 
-![image](/assets/img/owl/3.PNG)
-
 - I found a suspicious object id `.1.3.6.1.4` that there is not in the list
 
 ![image](/assets/img/owl/4.PNG)
