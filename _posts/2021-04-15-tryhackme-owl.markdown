@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "TryHackMe - Year of the Owl"
-date:   2021-04-16 10:10:05 +0300
+date:   2021-04-15 10:10:05 +0300
 categories: [tryhackme,walkthrough]
 pin: true
 tags: [snmp,crackmapexec,nmap,evil-winrm,backup]
