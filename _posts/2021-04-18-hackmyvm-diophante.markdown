@@ -200,7 +200,7 @@ view-source:http://hard/blog/wp-content/plugins/site-editor/editor/extensions/pa
 listening on [any] 4444 ...
 ```
 
-![image](/assets/img/diophante/6.PNG)
+![image](/assets/img/diophante/7.PNG)
 
 ## Privileges Escalation | doas
 
