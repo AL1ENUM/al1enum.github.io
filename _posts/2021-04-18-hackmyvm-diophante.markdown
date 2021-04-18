@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "HackMyVm - Diophante"
+title:  "HackMyVM - Diophante"
 categories: [tryhackme,walkthrough]
 pin: true
 tags: [smtp,wordpress,lfi,wpscan]
