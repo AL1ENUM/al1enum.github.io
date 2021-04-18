@@ -3,7 +3,7 @@ layout: post
 title:  "HackMyVM - Diophante"
 categories: [tryhackme,walkthrough]
 pin: true
-tags: [smtp,wordpress,lfi,wpscan]
+tags: [smtp,wordpress,lfi,wpscan,doas,ld_preload]
 ---
 
 ![image](/assets/img/diophante/1.PNG)
