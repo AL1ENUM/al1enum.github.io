@@ -172,7 +172,7 @@ the quick brown fox jumps over the lazy dog
 
 Credentials :  `py` : `54ezhCGaJV`
 
-```sh
+```c
 ┌──(alienum㉿kali)-[~]
 └─$ ssh py@10.0.2.240
 py@10.0.2.240s password:
