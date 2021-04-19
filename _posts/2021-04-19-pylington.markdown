@@ -278,7 +278,7 @@ alienum:$1$OFv8605C$Ijg./7PjFUq2HdzInVpFS1:0:0::/root:/bin/bash
 
 Because the script checks online the starting string we can file inclusion the ```/srv/backups/../../etc/passwd```
 So, i typed :
-
+<br>
 ```
 alienum:$1$OFv8605C$Ijg./7PjFUq2HdzInVpFS1:0:0::/root:/bin/bash
 ```
