@@ -3,8 +3,10 @@ layout: post
 title:  "VulnHub - Pylington"
 categories: [vulnhub,walkthrough]
 pin: true
-tags: []
+tags: [python,sandbox,reverse order,cpp,SUID]
 ---
+
+## VulnHub - Pylington
 
 ## Port Scan
 
