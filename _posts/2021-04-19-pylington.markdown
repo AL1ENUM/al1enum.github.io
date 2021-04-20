@@ -127,7 +127,7 @@ exec(')"imaohw"(metsys.so ;so tropmi'[::-1])
 equals to :
 
 ```python
-exec("import os; os.system("whoami""))
+exec('import os; os.system("whoami")')
 ```
 
 ![image](/assets/img/pylington/6.PNG)
