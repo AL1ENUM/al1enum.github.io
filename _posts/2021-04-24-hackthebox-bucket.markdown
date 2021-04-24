@@ -3,7 +3,7 @@ layout: post
 title:  "HackTheBox - Bucket (User only)"
 categories: [HackTheBox,walkthrough]
 pin: true
-tags: []
+tags: [awscli,Amazon,bucket,DynamoDbClient,XSS,pdf,]
 ---
 
 ## Port Scan
