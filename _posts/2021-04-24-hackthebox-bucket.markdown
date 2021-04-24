@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "HackTheBox - Bucket (User only)"
+title:  "HackTheBox - Bucket"
 categories: [HackTheBox,walkthrough]
 pin: true
 tags: [awscli,Amazon,bucket,DynamoDbClient,XSS,pdf,]
