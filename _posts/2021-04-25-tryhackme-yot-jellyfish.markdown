@@ -8,4 +8,4 @@ tags: [rickroll]
 
 #### TryHackMe - Year of the Jellyfish (methodology)
 
-<iframe width="700" height="415" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+<iframe width="700" height="415" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allowfullscreen></iframe>
