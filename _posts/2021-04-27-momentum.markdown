@@ -62,7 +62,7 @@ auxerre-<REMOVED>##
 ## SSH | Guess username
 
 username : `auxerre`
-password : `auxerre-alienum##`
+password : `auxerre-<REMOVED>##`
 
 ## Redis
 
