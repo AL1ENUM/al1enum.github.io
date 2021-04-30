@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "TryHackMe - Year of the Jellyfish (Rick Roll)"
+title:  "TryHackMe - Year of the Jellyfish"
 categories: [TryHackMe,walkthrough]
 pin: true
 tags: [monitorr,curl,cookie,dirtysock,magicbytes,extensions,Upload]
