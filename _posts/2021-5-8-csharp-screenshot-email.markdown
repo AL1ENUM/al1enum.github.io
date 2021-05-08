@@ -34,7 +34,7 @@ tags: [CSharp,trojan,smtp,bitmap,smtpclient,education,visual studio,dovecot,post
 
 ![image](/assets/img/csharp/5.png)
 
-## Windows Form App
+## Windows Form App - Visual Studio
 
 - Define strings
 
