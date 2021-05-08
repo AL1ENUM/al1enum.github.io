@@ -254,7 +254,7 @@ namespace Eye
 }
 ```
 
-## In Action
+## In Action - Running the program from the Windows
 
 - Email sended
 
