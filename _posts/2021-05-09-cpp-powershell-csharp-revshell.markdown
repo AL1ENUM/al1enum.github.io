@@ -30,6 +30,8 @@ Add-Type -TypeDefinition $code -Language CSharp
 iex "[HelloWorld.Program]::Main()"
 ```
 
+![image](/assets/img/revshell/4.PNG)
+
 ## The Reverse Shell in CSharp
 
 Find it here : [Simple CSharp Reverse Shell](https://www.puckiestyle.nl/c-simple-reverse-shell/)
