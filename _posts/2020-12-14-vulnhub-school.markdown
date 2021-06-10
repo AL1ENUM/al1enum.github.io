@@ -117,12 +117,12 @@ EIP denotes the address of next instruction has to be executed into the stack.
 
 Ιn the image below we can see the sequence of A's did not escape the buffer space. Therefore there is no buffer overflow vulnerability.
 
-![image](/assets/img/school/buffer1.PNG)
+![image](/assets/img/school/buffer1.png)
 
 
 Ιn the second image below we can see the sequence of A's have escaped the buffer space and have reached the EIP. Therefore there a buffer overflow vulnerability. Gaining control of the EIP is very dangerous because, the attacker can use the pointer to point to malicious code and spawn a reverse shell.
 
-![image](/assets/img/school/buffer2.PNG)
+![image](/assets/img/school/buffer2.png)
 
 #### Fuzzing
 
