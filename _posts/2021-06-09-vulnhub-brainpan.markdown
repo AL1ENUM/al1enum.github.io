@@ -127,7 +127,7 @@ EBP denotes the address of the location where the first data has to be entered i
 
 EIP denotes the address of next instruction has to be executed into the stack.
 
-![[Pasted image 20210609231540.png]]
+![image](/assets/img/brainpan/Pasted image 20210609231540.png)
 
 
 ```python
@@ -191,7 +191,7 @@ except Exception as e:
 - EIP Overrided with value :  **35754334**
 - This number will be usefull to find the exact offset in order to control the EIP
 
-![[Pasted image 20210609232300.png]]
+![image](/assets/img/brainpan/Pasted image 20210609232300.png)
 
 ###### Exact offset
 
@@ -203,7 +203,7 @@ except Exception as e:
 [*] Exact match at offset 524
 ```
 
-![[Pasted image 20210609234130.png]]
+![image](/assets/img/brainpan/Pasted image 20210609234130.png)
 
 - Let's confirm the EIP control
 
@@ -212,7 +212,7 @@ except Exception as e:
 
 - EIP Control Success
 
-![[Pasted image 20210609234824.png]]
+![image](/assets/img/brainpan/Pasted image 20210609234824.png)
 
 ```python
 import socket,sys
@@ -279,17 +279,17 @@ except Exception as ex:
 - By default  `\x00` is badchar so we excluded from the list
 - Check the [VulnHub - School](https://al1enum.github.io/vulnhub/walkthrough/2020/12/16/vulnhub-school.html) for BOF with badchars and how to handle it
 
-![[Pasted image 20210609235751.png]]
+![image](/assets/img/brainpan/Pasted image 20210609235751.png)
 
 #### JMP ESP
 
 We don’t need to give to the EIP the exact address of our malicious shellcode. The instruction **JMP ESP** will jump to the stack pointer and execute our malicious shellcode. So, If we can find the JMP ESP instruction in the program, we can give its memory address to the EIP and it will jump to automatically to our malicious shellcode.
 
-![[Pasted image 20210609235930.png]]
+![image](/assets/img/brainpan/Pasted image 20210609235930.png)
 
 Immunity Debugger -> Search for -> All commands -> JMP ESP
 
-![[Pasted image 20210610000525.png]]
+![image](/assets/img/brainpan/Pasted image 20210610000525.png)
 
 - The address of the JMP ESP is :  
 	- 311712F3 or in little endian
@@ -299,7 +299,7 @@ Immunity Debugger -> Search for -> All commands -> JMP ESP
 
 - Toggle Breakpoint on JMP ESP Address
 
-![[Pasted image 20210610001923.png]]
+![image](/assets/img/brainpan/Pasted image 20210610001923.png)
 
 - Becarefull do not encode the `\xF3\x12\x17\x31` just  concat it with the encoded payload like this  `payload.encode('utf-8')+b'\xF3\x12\x17\x31'`
 
@@ -320,7 +320,7 @@ except Exception as ex:
     sys.exit()
 ```
 
-![[Pasted image 20210610005103.png]]
+![image](/assets/img/brainpan/Pasted image 20210610005103.png)
 
 - We triggered the breakpoint. Therefore, the EIP call successfully the address of the Instruction JMP ESP.
 
@@ -413,4 +413,4 @@ except Exception as ex:
 
 - reverse shell done
 
-![[Pasted image 20210610013722.png]]
+![image](/assets/img/brainpan/Pasted image 20210610013722.png)
