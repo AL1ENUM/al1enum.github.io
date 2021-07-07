@@ -128,7 +128,7 @@ smb: \active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Prefere
 
 search : group policies cpassword decrypt
 
-i found this : [](https://www.andreafortuna.org/2019/02/13/abusing-group-policy-preference-files-for-password-discovery/)
+i found this : [abusing-group-policy-preference-files](https://www.andreafortuna.org/2019/02/13/abusing-group-policy-preference-files-for-password-discovery/)
 
 #### Decryption
 
