@@ -1,11 +1,11 @@
 site: al1enum
 title: al1enum
+data-theme: dark # default theme "dark" | "light"
 greetings: Hi 👋
 description: >-
   Tonight silence we gather dreams.
 lang: en-US
 timezone:  Europe/Athens
-#data-theme: "dark" # default theme "dark" | "light"
 
 author:
   name: al1enum
