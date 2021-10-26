@@ -40,20 +40,20 @@ layout: compress
       }
     }
 
-    let theme = 'dark'
+    //let theme = localStorage.getItem('theme');
 
-    theme = theme //|| (window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' : 'light');
+    //theme = theme || (window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' : 'light');
 
-    setTheme(theme);
+    setTheme('dark');
 
     function modeSwitcher() {
       let currentMode = document.documentElement.getAttribute('data-theme');
 
-     // if (currentMode === "dark") {
-     //   setTheme('light');
-     // } else {
+      if (currentMode === "dark") {
+        setTheme('light');
+      } else {
         setTheme('dark');
-     // }
+      }
     }
   </script>
 
