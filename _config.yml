@@ -5,8 +5,7 @@ description: >-
   Tonight silence we gather dreams.
 lang: en-US
 timezone:  Europe/Athens
-data-theme: dark # default theme "dark" | "light"
-theme: dark
+data-theme: "dark" # default theme "dark" | "light"
 
 author:
   name: al1enum
