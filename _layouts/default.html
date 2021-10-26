@@ -40,7 +40,7 @@ layout: compress
       }
     }
 
-    let theme = localStorage.getItem('theme');
+    let theme = 'dark'
 
     theme = theme || (window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' : 'light');
 
@@ -49,11 +49,11 @@ layout: compress
     function modeSwitcher() {
       let currentMode = document.documentElement.getAttribute('data-theme');
 
-      if (currentMode === "dark") {
-        setTheme('light');
-      } else {
+     // if (currentMode === "dark") {
+     //   setTheme('light');
+     // } else {
         setTheme('dark');
-      }
+     // }
     }
   </script>
 
