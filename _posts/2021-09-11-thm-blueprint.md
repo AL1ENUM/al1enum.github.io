@@ -12,91 +12,20 @@ export ip=10.10.98.180
 
 #### Port Scan
 
-```bash
-┌──(kali㉿Zeus)-[~]
-└─$ sudo nmap -A -O -sS $ip      
-[sudo] password for kali: 
-Starting Nmap 7.91 ( https://nmap.org ) at 2021-09-11 16:08 EEST
-Stats: 0:00:49 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
-Service scan Timing: About 58.33% done; ETC: 16:09 (0:00:26 remaining)
-Nmap scan report for 10.10.98.180 (10.10.98.180)
-Host is up (0.12s latency).
-Not shown: 988 closed ports
+```bash  
 PORT      STATE SERVICE      VERSION
 80/tcp    open  http         Microsoft IIS httpd 7.5
-| http-methods: 
-|_  Potentially risky methods: TRACE
-|_http-server-header: Microsoft-IIS/7.5
-|_http-title: 404 - File or directory not found.
 135/tcp   open  msrpc        Microsoft Windows RPC
 139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
 443/tcp   open  ssl/http     Apache httpd 2.4.23 (OpenSSL/1.0.2h PHP/5.6.28)
-|_http-server-header: Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28
-|_http-title: Index of /
-| ssl-cert: Subject: commonName=localhost
-| Not valid before: 2009-11-10T23:48:47
-|_Not valid after:  2019-11-08T23:48:47
-|_ssl-date: TLS randomness does not represent time
-| tls-alpn: 
-|_  http/1.1
 445/tcp   open  microsoft-ds Windows 7 Home Basic 7601 Service Pack 1 microsoft-ds (workgroup: WORKGROUP)
 3306/tcp  open  mysql        MariaDB (unauthorized)
 8080/tcp  open  http         Apache httpd 2.4.23 (OpenSSL/1.0.2h PHP/5.6.28)
-| http-methods: 
-|_  Potentially risky methods: TRACE
-|_http-server-header: Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28
-|_http-title: Index of /
 49152/tcp open  msrpc        Microsoft Windows RPC
 49153/tcp open  msrpc        Microsoft Windows RPC
 49154/tcp open  msrpc        Microsoft Windows RPC
 49163/tcp open  msrpc        Microsoft Windows RPC
 49167/tcp open  msrpc        Microsoft Windows RPC
-No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
-TCP/IP fingerprint:
-OS:SCAN(V=7.91%E=4%D=9/11%OT=80%CT=1%CU=36576%PV=Y%DS=2%DC=T%G=Y%TM=613CAA9
-OS:6%P=x86_64-pc-linux-gnu)SEQ(SP=109%GCD=1%ISR=10A%TI=I%CI=I%II=I%SS=S%TS=
-OS:7)SEQ(SP=109%GCD=1%ISR=10A%TI=I%CI=I%TS=7)OPS(O1=M505NW8ST11%O2=M505NW8S
-OS:T11%O3=M505NW8NNT11%O4=M505NW8ST11%O5=M505NW8ST11%O6=M505ST11)WIN(W1=200
-OS:0%W2=2000%W3=2000%W4=2000%W5=2000%W6=2000)ECN(R=Y%DF=Y%T=80%W=2000%O=M50
-OS:5NW8NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=AS%RD=0%Q=)T2(R=Y%DF=Y%T=80%
-OS:W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)T3(R=Y%DF=Y%T=80%W=0%S=Z%A=O%F=AR%O=%RD=0%Q=
-OS:)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=80%W=0%S=Z%A=
-OS:S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T7(R=Y%DF
-OS:=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=
-OS:G%RID=G%RIPCK=Z%RUCK=0%RUD=G)IE(R=Y%DFI=N%T=80%CD=Z)
-
-Network Distance: 2 hops
-Service Info: Hosts: www.example.com, BLUEPRINT, localhost; OS: Windows; CPE: cpe:/o:microsoft:windows
-
-Host script results:
-|_clock-skew: mean: -19m57s, deviation: 34m37s, median: 1s
-|_nbstat: NetBIOS name: BLUEPRINT, NetBIOS user: <unknown>, NetBIOS MAC: 02:6a:2d:ff:3e:cd (unknown)
-| smb-os-discovery: 
-|   OS: Windows 7 Home Basic 7601 Service Pack 1 (Windows 7 Home Basic 6.1)
-|   OS CPE: cpe:/o:microsoft:windows_7::sp1
-|   Computer name: BLUEPRINT
-|   NetBIOS computer name: BLUEPRINT\x00
-|   Workgroup: WORKGROUP\x00
-|_  System time: 2021-09-11T14:09:37+01:00
-| smb-security-mode: 
-|   account_used: guest
-|   authentication_level: user
-|   challenge_response: supported
-|_  message_signing: disabled (dangerous, but default)
-| smb2-security-mode: 
-|   2.02: 
-|_    Message signing enabled but not required
-| smb2-time: 
-|   date: 2021-09-11T13:09:37
-|_  start_date: 2021-09-11T13:07:15
-
-TRACEROUTE (using port 110/tcp)
-HOP RTT       ADDRESS
-1   79.61 ms  10.8.0.1 (10.8.0.1)
-2   114.62 ms 10.10.98.180 (10.10.98.180)
-
-OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 95.85 seconds
 ```
 
 #### Searchsploit - OS Commerce 
@@ -104,30 +33,8 @@ Nmap done: 1 IP address (1 host up) scanned in 95.85 seconds
 - url : http://$ip:8080/oscommerce-2.3.4/
 
 ```bash
-┌──(kali㉿Zeus)-[~]
-└─$ searchsploit oscommerce 2.3.4
--------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
- Exploit Title                                                                                                                              |  Path
--------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
-osCommerce 2.3.4 - Multiple Vulnerabilities                                                                                                 | php/webapps/34582.txt
-osCommerce 2.3.4.1 - 'currency' SQL Injection                                                                                               | php/webapps/46328.txt
-osCommerce 2.3.4.1 - 'products_id' SQL Injection                                                                                            | php/webapps/46329.txt
-osCommerce 2.3.4.1 - 'reviews_id' SQL Injection                                                                                             | php/webapps/46330.txt
-osCommerce 2.3.4.1 - 'title' Persistent Cross-Site Scripting                                                                                | php/webapps/49103.txt
-osCommerce 2.3.4.1 - Arbitrary File Upload                                                                                                  | php/webapps/43191.py
-osCommerce 2.3.4.1 - Remote Code Execution                                                                                                  | php/webapps/44374.py
--------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
-Shellcodes: No Results
- 
-┌──(kali㉿Zeus)-[~]
-└─$ locate php/webapps/44374.py
-/usr/share/exploitdb/exploits/php/webapps/44374.py
-                       
-┌──(kali㉿Zeus)-[~]
-└─$ cp /usr/share/exploitdb/exploits/php/webapps/44374.py /home/kali/Desktop 
-  
-┌──(kali㉿Zeus)-[~]
-└─$ cd Desktop     
+searchsploit oscommerce 2.3.4
+cp /usr/share/exploitdb/exploits/php/webapps/44374.py /home/kali/Desktop    
 ```
 
 #### PHP Reverse Shell 
