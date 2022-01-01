@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "New Era"
+---
+
+
+#### Thoughts 
+
+The 2021 was full of knowledge and learning, every evolution brings changes. 
+As alienum i realized that i lost my motivation for CTFs. 
+Now im ready to deep dive in new things that i never had done in cyber security. 
+I will create a new branch in the tree of my path in cyber security.
+
+
+#### VM Creation
+
+The creation of machines will not stop but the frequency of creation will be reduced.
+
+~ Quantity is the opposite of quality. Time-driven
+
+#### First Steps & New Goals
+
+I plan to create a new name, over alienum, where it will represent a way of thinking in the world of cybersecurity. 
+I will create a gitbook where it will present my work from a professional point of view.
+
+
+I will upload a new post with the link of the new era ;)
+
