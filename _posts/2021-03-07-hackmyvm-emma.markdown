@@ -3,9 +3,8 @@ layout: post
 title:  "HackMyVM - Emma"
 date:   2021-03-07 10:10:05 +0300
 categories: [hackmyvm,walkthrough]
-pin: true
+pin: false
 tags: [gzexe,golang,sql,phuip-fpizdam]
-image: /images/emma.jpg
 ---
 - You’ll find this vm in HackMyVM `https://hackmyvm.eu/machines/machine.php?vm=Emma`
 

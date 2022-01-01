@@ -3,9 +3,8 @@ layout: post
 title:  "VulnHub - ICMP"
 date:   2021-03-07 10:10:05 +0300
 categories: [vulnhub,walkthrough]
-pin: true
+pin: false
 tags: [exploitdb,monitorr,Enumeration,hping3,id_rsa]
-image: /images/icmp.jpg
 ---
 You’ll find this vm in  `https://www.vulnhub.com/entry/icmp-1,633/`
 ## Port Scan

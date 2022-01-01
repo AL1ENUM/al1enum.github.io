@@ -2,7 +2,7 @@
 layout: post
 title:  "VulnHub - The Planets : Mercury"
 categories: [vulnhub,walkthrough]
-pin: true
+pin: false
 tags: [sqli,path injection,sudo,base64]
 image: /images/planet.jpg
 ---

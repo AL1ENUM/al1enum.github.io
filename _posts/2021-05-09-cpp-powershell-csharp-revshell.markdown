@@ -4,7 +4,6 @@ title:  "Cpp & Powershell & CSharp - Reverse Shell (Detectable)"
 categories: [cplusplus]
 pin: true
 tags: [csharp,trojan,cpp,powershell,Reverse Shell]
-image: /images/triptych.jpg
 ---
 
 *Only for Educational purpose*

@@ -3,9 +3,8 @@ layout: post
 title:  "HackMyVM - Ceres"
 date:   2021-03-07 10:10:05 +0300
 categories: [hackmyvm,walkthrough]
-pin: true
+pin: false
 tags: [python,PHP-wrapper,log poisoning,Python Library Hijacking,lfi,User-Agent,logs]
-image: /images/dimi.jpg
 ---
 
 - You’ll find this vm in HackMyVM `https://hackmyvm.eu/machines/machine.php?vm=Ceres`

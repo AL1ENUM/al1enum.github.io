@@ -3,7 +3,7 @@ layout: post
 title:  "HackMyVM - Brain"
 date:   2021-02-02 10:10:05 +0300
 categories: [hackmyvm,walkthrough]
-pin: true
+pin: false
 tags: [LFI,sched_debug,psaux,wget]
 image: /images/brain.jpg
 ---

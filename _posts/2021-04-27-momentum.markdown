@@ -2,9 +2,8 @@
 layout: post
 title:  "Momentum - Walkthrough"
 categories: [hackmyvm,vulnhub,walkthrough]
-pin: true
+pin: false
 tags: [enumeration,js,npm,node,cookies,XSS,redis,guessing]
-image: /images/momentum.jpg
 ---
 
 

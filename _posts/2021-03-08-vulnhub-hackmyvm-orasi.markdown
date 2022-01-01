@@ -3,9 +3,8 @@ layout: post
 title:  "Orasi - Walkthrough"
 date:   2020-12-01 10:10:05 +0300
 categories: [vulnhub,hackmyvm,walkthrough,myvms]
-pin: true
+pin: false
 tags: [ELF Analysis,SSTI,crunch,Jail escape,APK analysis,bytecode-viewer, hex, objdump,procyon, python,php]
-image: /images/orasi.jpg
 ---
 - You’ll find this vm in Vulnhub `https://www.vulnhub.com/entry/orasi-1,660/`
 

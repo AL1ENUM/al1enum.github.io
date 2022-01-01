@@ -3,9 +3,8 @@ layout: post
 title:  "VulnHub - Phineas"
 date:   2021-04-14 4:23:23 +0300
 categories: [vulnhub,walkthrough]
-pin: true
+pin: false
 tags: [pickle,deserialization,port forwarding,enumeration,CVE]
-image: /images/ph.jpg
 ---
 
 ## Walkthrough

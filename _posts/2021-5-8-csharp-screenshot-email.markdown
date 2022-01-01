@@ -4,7 +4,6 @@ title:  "CSharp - Screenshot & Send the Screenshot via Email"
 categories: [csharp]
 pin: true
 tags: [CSharp,trojan,smtp,bitmap,smtpclient,education,visual studio,dovecot,postfix]
-image: /images/eye.jpg
 ---
 
 *Only for Educational purpose*

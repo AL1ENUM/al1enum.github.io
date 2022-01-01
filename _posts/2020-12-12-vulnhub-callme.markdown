@@ -3,9 +3,8 @@ layout: post
 title:  "VulnHub - Callme"
 date:   2020-12-15 23:23:23 +0300
 categories: [vulnhub,walkthrough]
-pin: true
+pin: false
 tags: [tcpdump,programming,mount.nfs,passwd,enumeration]
-image: /images/emma.jpg
 ---
 You’ll find this vm here :  `https://www.vulnhub.com/entry/callme-1,615/`
 

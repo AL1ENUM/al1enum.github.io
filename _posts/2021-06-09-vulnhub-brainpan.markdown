@@ -2,9 +2,8 @@
 layout: post
 title:  "VulnHub - Brainpan"
 categories: [VulnHub,walkthrough]
-pin: true
+pin: false
 tags: [fuzzing,badchars,JMP ESP,BOF,Immunity Debugger,Shellcode,pattern_create,pattern_offset]
-image: /images/brainpan.jpg
 ---
 
 ## VulnHub - Brainpan 1

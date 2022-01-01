@@ -2,9 +2,8 @@
 layout: post
 title:  "VulnHub - Pylington"
 categories: [vulnhub,walkthrough]
-pin: true
+pin: false
 tags: [python,sandbox,reverse order,cpp,SUID]
-image: /images/py.jpg
 ---
 
 ## VulnHub - Pylington

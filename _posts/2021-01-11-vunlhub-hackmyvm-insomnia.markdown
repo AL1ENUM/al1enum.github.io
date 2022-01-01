@@ -3,7 +3,7 @@ layout: post
 title:  "Insomnia - Walkthrough"
 date:   2021-01-11 10:10:05 +0300
 categories: [vulnhub,hackmyvm,walkthrough,myvms]
-pin: true
+pin: false
 tags: [RCE,cron,sudo]
 image: /images/insomnia.jpg
 ---

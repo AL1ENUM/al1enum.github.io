@@ -3,9 +3,8 @@ layout: post
 title:  "HackMyVM - CelebritySoup"
 date:   2021-02-04 10:10:05 +0300
 categories: [hackmyvm,walkthrough]
-pin: true
+pin: false
 tags: [gzexe,golang,sql,phuip-fpizdam]
-image: /images/cele.jpg
 ---
 
 

@@ -3,9 +3,8 @@ layout: post
 title:  "VulnHub - School [ Windows BOF ]"
 date:   2020-12-16 23:23:23 +0300
 categories: [vulnhub,walkthrough]
-pin: true
+pin: false
 tags: [sqli,reverse shell,Buffer Overflow,Windows,Immunity Debugger, shellcode]
-image: /images/school.jpg
 ---
 You’ll find this vm here :  `https://www.vulnhub.com/entry/school-1,613/`
 
