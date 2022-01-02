@@ -10,28 +10,19 @@ tags: [python,sandbox,reverse order,cpp,SUID]
 
 ## Port Scan
 
+```bash
+sudo nmap -sS -A -O 10.0.2.240
+```
+
 ```sh
-┌──(alienum㉿kali)-[~]
-└─$ sudo nmap -sS -A -O 10.0.2.240
-[sudo] password for alienum:
-Starting Nmap 7.91 ( https://nmap.org ) at 2021-04-19 22:50 EEST
-Nmap scan report for 10.0.2.240 (10.0.2.240)
-Host is up (0.0010s latency).
-Not shown: 998 closed ports
 PORT   STATE SERVICE VERSION
-22/tcp open  ssh     OpenSSH 8.5 (protocol 2.0)
-| ssh-hostkey:
-|   3072 bf:ba:23:4e:69:37:69:9f:23:ae:21:35:98:4d:39:fa (RSA)
-|   256 ed:95:53:52:ef:70:1f:c0:0e:3c:d8:be:35:fc:3a:93 (ECDSA)
-|_  256 2d:b8:b0:88:52:83:7b:00:47:31:a4:76:2b:3d:7d:28 (ED25519)
+22/tcp open  ssh     OpenSSH 8.5
 80/tcp open  http    Apache httpd 2.4.46 ((Unix) mod_wsgi/4.7.1 Python/3.9)
 |_http-generator: Jekyll v4.1.1
 | http-methods:
 |_  Potentially risky methods: TRACE
 | http-robots.txt: 3 disallowed entries
 |_/register /login /zbir7mn240soxhicso2z
-|_http-server-header: Apache/2.4.46 (Unix) mod_wsgi/4.7.1 Python/3.9
-|_http-title: Pylington Cloud | The best way to run Python.
 ```
 <br>
 
@@ -306,27 +297,9 @@ uid=0(root) gid=0(root) groups=0(root)
 
 The `/etc/passwd` looks like this :
 
-```
-[root@archlinux secret_stuff]# cat /etc/passwd
+```bash
 root:x:0:0::/root:/bin/bash
-bin:x:1:1::/:/usr/bin/nologin
-daemon:x:2:2::/:/usr/bin/nologin
-mail:x:8:12::/var/spool/mail:/usr/bin/nologin
-ftp:x:14:11::/srv/ftp:/usr/bin/nologin
-http:x:33:33::/srv/http:/usr/bin/nologin
-nobody:x:65534:65534:Nobody:/:/usr/bin/nologin
-dbus:x:81:81:System Message Bus:/:/usr/bin/nologin
-systemd-journal-remote:x:981:981:systemd Journal Remote:/:/usr/bin/nologin
-systemd-network:x:980:980:systemd Network Management:/:/usr/bin/nologin
-systemd-oom:x:979:979:systemd Userspace OOM Killer:/:/usr/bin/nologin
-systemd-resolve:x:978:978:systemd Resolver:/:/usr/bin/nologin
-systemd-timesync:x:977:977:systemd Time Synchronization:/:/usr/bin/nologin
-systemd-coredump:x:976:976:systemd Core Dumper:/:/usr/bin/nologin
-uuidd:x:68:68::/:/usr/bin/nologin
-dhcpcd:x:975:975:dhcpcd privilege separation:/:/usr/bin/nologin
 py:x:1000:1000::/home/py:/bin/bash
-git:x:974:974:git daemon user:/:/usr/bin/git-shell
-redis:x:973:973:Redis in-memory data structure store:/var/lib/redis:/usr/bin/nologin
 alienum:$1$OFv8605C$Ijg./7PjFUq2HdzInVpFS1:0:0::/root:/bin/bash
 ```
 

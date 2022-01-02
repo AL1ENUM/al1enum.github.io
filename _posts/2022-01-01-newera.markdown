@@ -23,6 +23,16 @@ The creation of machines will not stop but the frequency of creation will be red
 I plan to create a new name, over alienum, where it will represent a way of thinking in the world of cybersecurity. 
 I will create a gitbook where it will present my work from a professional point of view.
 
+#### Contents
+
+- PowerShell for Pentesters
+- Information Gathering / OSINT
+- Red Teaming / Active Directory
+- Web App Exploitation
+- Programs and Scripts related to Cyber Security
+- Post Exploitation / Privileges Escalation 
+- Many other things
+
 
 I will upload a new post with the link of the new era ;)
 

@@ -62,11 +62,6 @@ foreach ($port in $ports) {
        }
 ```
 
-#### Run the script
-
-![image]( /assets/img/powershell-scan/1.PNG)
-
-
 #### All Together
 
 ```powershell
@@ -107,3 +102,8 @@ foreach ($ip in $ips) {
 
 }
 ```
+
+#### Run the script
+
+![image]( /assets/img/powershell-scan/1.PNG)
+

