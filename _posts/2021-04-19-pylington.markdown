@@ -2,7 +2,7 @@
 layout: post
 title:  "VulnHub - Pylington"
 categories: [vulnhub,walkthrough]
-hide: true
+pin: false
 tags: [python,sandbox,reverse order,cpp,SUID]
 ---
 
