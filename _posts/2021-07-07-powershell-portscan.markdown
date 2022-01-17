@@ -1,8 +1,6 @@
 ---
 layout: post
 title:  "PowerShell - Port Scan"
-categories: [PowerShell]
-tags: [PowerShell,PortScan,Ping]
 ---
 
 #### Reasons to create your own Port Scan Script

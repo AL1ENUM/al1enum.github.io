@@ -1,10 +1,6 @@
 ---
 layout: post
-title:  "VulnHub - The Planets : Mercury"
-categories: [vulnhub,walkthrough]
-pin: false
-tags: [sqli,path injection,sudo,base64]
-image: /images/planet.jpg
+title:  "Case Study : Mercury / VulnHub"
 ---
 - You’ll find this vm in Vulnhub `https://www.vulnhub.com/entry/the-planets-mercury,544/`
 

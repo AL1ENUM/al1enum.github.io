@@ -1,11 +1,6 @@
 ---
 layout: post
-title:  "Insomnia - Walkthrough"
-date:   2021-01-11 10:10:05 +0300
-categories: [vulnhub,hackmyvm,walkthrough,myvms]
-pin: false
-tags: [RCE,cron,sudo]
-image: /images/insomnia.jpg
+title:  "Case Study : Insomnia"
 ---
 - You’ll find this vm in Vulnhub `https://www.vulnhub.com/entry/insomnia-1,644/`
 

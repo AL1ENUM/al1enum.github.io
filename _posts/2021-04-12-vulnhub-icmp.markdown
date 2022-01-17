@@ -1,10 +1,6 @@
 ---
 layout: post
-title:  "VulnHub - ICMP"
-date:   2021-03-07 10:10:05 +0300
-categories: [vulnhub,walkthrough]
-pin: false
-tags: [exploitdb,monitorr,Enumeration,hping3,id_rsa]
+title:  "Case Study : ICMP - VulnHub"
 ---
 
 

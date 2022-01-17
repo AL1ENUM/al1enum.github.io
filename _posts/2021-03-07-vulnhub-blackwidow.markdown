@@ -1,10 +1,6 @@
 ---
 layout: post
-title:  "VulnHub - Black Widow"
-date:   2021-03-07 10:10:05 +0300
-categories: [vulnhub,walkthrough]
-pin: false
-tags: [log poisoning,backups,User-Agent,strings,GTFObins,perl]
+title:  "Case Study : Black Widow"
 ---
 - You’ll find this vm in Vulnhub `https://www.vulnhub.com/entry/black-widow-1,637/`
 

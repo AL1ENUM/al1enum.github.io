@@ -1,10 +1,6 @@
 ---
 layout: post
-title:  "HackMyVM - Emma"
-date:   2021-03-07 10:10:05 +0300
-categories: [hackmyvm,walkthrough]
-pin: false
-tags: [gzexe,golang,sql,phuip-fpizdam]
+title:  "Case Study : Emma / HMV"
 ---
 - You’ll find this vm in HackMyVM `https://hackmyvm.eu/machines/machine.php?vm=Emma`
 

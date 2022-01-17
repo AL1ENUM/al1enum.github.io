@@ -1,10 +1,6 @@
 ---
 layout: post
-title:  "VulnHub - Hacksudo : aliens"
-date:   2021-04-11 23:23:04 +0300
-categories: [vulnhub,walkthrough]
-pin: false
-tags: [backup,mysql,SUID,crack,cpulimit,date,phpmyadmin]
+title:  "Case Study : Hacksudo aliens - VulnHub"
 ---
 You’ll find this vm here :  `https://www.vulnhub.com/entry/hacksudo-aliens,676/`
 

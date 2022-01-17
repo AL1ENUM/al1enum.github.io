@@ -1,11 +1,6 @@
 ---
 layout: post
-title:  "Neobank - Walkthrough"
-date:   2020-12-28 10:10:05 +0300
-categories: [vulnhub,hackmyvm,walkthrough,myvms]
-pin: false
-tags: [enumeration,bruteforce,google authenticator,eval,sudo]
-image: /images/neobank.jpg
+title:  "Case Study : Neobank"
 ---
 - You’ll find this vm in Vulnhub `https://www.vulnhub.com/entry/neobank-1,642/`
 

@@ -1,9 +1,6 @@
 ---
 layout: post
-title:  "VulnHub - Pylington"
-categories: [vulnhub,walkthrough]
-pin: false
-tags: [python,sandbox,reverse order,cpp,SUID]
+title:  "Case Study : Pylington - VulnHub"
 ---
 
 ## VulnHub - Pylington

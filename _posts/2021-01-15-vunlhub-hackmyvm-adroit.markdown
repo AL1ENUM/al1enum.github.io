@@ -1,11 +1,6 @@
 ---
 layout: post
-title:  "Adroit - Walkthrough"
-date:   2021-01-15 10:10:05 +0300
-categories: [vulnhub,hackmyvm,walkthrough,myvms]
-pin: false
-tags: [Jar Analysis,MySQL,sqli,client,Jar reverse shell,sudo,AES decryption]
-image: /images/adroit.jpg
+title:  "Case Study : Adroit"
 ---
 You’ll find this vm in Vulnhub `https://www.vulnhub.com/entry/adroit-101,647/`
 Also to HackMyVm `https://hackmyvm.eu/machines/machine.php?vm=Adroit`

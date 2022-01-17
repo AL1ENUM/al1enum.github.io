@@ -1,9 +1,6 @@
 ---
 layout: post
-title:  "Momentum - Walkthrough"
-categories: [hackmyvm,vulnhub,walkthrough]
-pin: false
-tags: [enumeration,js,npm,node,cookies,XSS,redis,guessing]
+title:  "Case Study : Momentum"
 ---
 
 

@@ -1,9 +1,6 @@
 ---
 layout: post
-title:  "Cpp & Powershell & CSharp - Reverse Shell (Detectable)"
-categories: [cplusplus]
-pin: true
-tags: [csharp,trojan,cpp,powershell,Reverse Shell]
+title:  "Custom Malware - Reverse Shell (Detectable)"
 ---
 
 *Only for Educational purpose*
