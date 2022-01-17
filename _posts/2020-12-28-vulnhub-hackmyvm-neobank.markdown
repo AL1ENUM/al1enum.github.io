@@ -14,9 +14,11 @@ title:  "Case Study : Neobank"
 
 ## Directory Scan
 
+```sh
+gobuster dir -k -u http://10.0.2.121:5000/ -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt
+```
+
 {% highlight sh %}
-  ┌──(alienum㉿kali)-[~]
-  └─$ gobuster dir -k -u http://10.0.2.121:5000/ -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt
   /login
   /logout
   /otp

