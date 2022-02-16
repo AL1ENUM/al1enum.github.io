@@ -14,7 +14,7 @@ title:  "Momentum -  HackMyVM / Vulnhub"
 
 ## XSS
 
-```
+```javascript
 http://10.0.2.239/opus-details.php?id=<script>alert(document.cookie)</script>
 ```
 
@@ -22,11 +22,11 @@ Result : `cookie=U2FsdGVkX193yTOKOucUbHeDp1Wxd5r7YkoM8daRtj0rjABqGuQ6Mx28N1VbBSZ
 
 ## Read main.js
 
-```
+```javascript
 view-source:http://10.0.2.239/js/main.js
 ```
 
-```js
+```javascript
 var CryptoJS = require("crypto-js");
 var decrypted = CryptoJS.AES.decrypt(encrypted, "SecretPassphraseMomentum");
 console.log(decrypted.toString(CryptoJS.enc.Utf8));
