@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : Brainpan - VulnHub"
+title:  "Brainpan - VulnHub"
 ---
 
 ## VulnHub - Brainpan 1

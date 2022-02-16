@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : Callme / VulnHub"
+title:  "Callme - VulnHub"
 ---
 You’ll find this vm here :  `https://www.vulnhub.com/entry/callme-1,615/`
 

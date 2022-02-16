@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : Adroit"
+title:  "Adroit - HackMyVM / Vulnhub"
 ---
 You’ll find this vm in Vulnhub `https://www.vulnhub.com/entry/adroit-101,647/`
 Also to HackMyVm `https://hackmyvm.eu/machines/machine.php?vm=Adroit`

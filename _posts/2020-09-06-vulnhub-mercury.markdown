@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : Mercury / VulnHub"
+title:  "Mercury - VulnHub"
 ---
 - You’ll find this vm in Vulnhub `https://www.vulnhub.com/entry/the-planets-mercury,544/`
 

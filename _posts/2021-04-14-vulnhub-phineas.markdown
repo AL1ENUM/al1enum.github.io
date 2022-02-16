@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : Phineas - VulnHub"
+title:  "Phineas - VulnHub"
 ---
 
 ## Walkthrough

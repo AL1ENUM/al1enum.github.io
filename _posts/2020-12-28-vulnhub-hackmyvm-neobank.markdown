@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : Neobank"
+title:  "Neobank - HackMyVM / Vulnhub"
 ---
 - You’ll find this vm in Vulnhub `https://www.vulnhub.com/entry/neobank-1,642/`
 

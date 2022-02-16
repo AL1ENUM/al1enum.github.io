@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : School / VulnHub"
+title:  "School - VulnHub"
 ---
 You’ll find this vm here :  `https://www.vulnhub.com/entry/school-1,613/`
 

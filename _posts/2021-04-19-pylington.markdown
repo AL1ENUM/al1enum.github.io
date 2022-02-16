@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : Pylington - VulnHub"
+title:  "Pylington - VulnHub"
 ---
 
 ## VulnHub - Pylington

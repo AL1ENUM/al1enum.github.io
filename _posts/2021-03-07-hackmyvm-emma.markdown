@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : Emma / HMV"
+title:  "Emma - HackMyVM"
 ---
 - You’ll find this vm in HackMyVM `https://hackmyvm.eu/machines/machine.php?vm=Emma`
 

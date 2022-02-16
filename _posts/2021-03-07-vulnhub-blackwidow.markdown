@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : Black Widow"
+title:  "Black Widow -  HackMyVM / Vulnhub"
 ---
 - You’ll find this vm in Vulnhub `https://www.vulnhub.com/entry/black-widow-1,637/`
 

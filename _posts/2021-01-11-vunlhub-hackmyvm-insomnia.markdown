@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : Insomnia"
+title:  "Insomnia - HackMyVM / Vulnhub"
 ---
 - You’ll find this vm in Vulnhub `https://www.vulnhub.com/entry/insomnia-1,644/`
 

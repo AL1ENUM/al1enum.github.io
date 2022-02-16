@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : ICMP - VulnHub"
+title:  "ICMP - VulnHub"
 ---
 
 

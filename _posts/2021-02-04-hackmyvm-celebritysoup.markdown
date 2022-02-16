@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : CelebritySoup / HMV"
+title:  "CelebritySoup - HackMyVM"
 ---
 
 

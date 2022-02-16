@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : Ceres / HMV"
+title:  "Ceres -  HackMyVM"
 ---
 
 - You’ll find this vm in HackMyVM `https://hackmyvm.eu/machines/machine.php?vm=Ceres`

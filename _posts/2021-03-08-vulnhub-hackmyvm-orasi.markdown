@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : Orasi"
+title:  "Orasi -  HackMyVM / Vulnhub"
 ---
 - You’ll find this vm in Vulnhub `https://www.vulnhub.com/entry/orasi-1,660/`
 

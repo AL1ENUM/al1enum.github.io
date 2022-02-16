@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Case Study : Hacksudo aliens - VulnHub"
+title:  "Hacksudo aliens - VulnHub"
 ---
 You’ll find this vm here :  `https://www.vulnhub.com/entry/hacksudo-aliens,676/`
 
