@@ -1,69 +1,35 @@
-# Gesko
+# NexT
 
-Simple and minimal Jekyll blog. 
-Forked from [Asko](https://github.com/manuelmazzuola/asko).
-Original theme from [Sidey](https://github.com/ronv/sidey).
+> 精于心，简于形
 
-### Features
+NexT 是由 [Hexo NexT](https://github.com/iissnan/hexo-theme-next) 移植而来的 Jekyll 主题。<!--commit: f951075d9b739d26b42472431995fa68d08796aa-->
 
-- [x] Responsive Design
-- [x] Dark/Ligh theme 🌗
-- [x] Inline CSS
-- [x] Anchor headings
-- [x] Tags & Tag pages 
-- [x] 404 page 
-- [x] Robots.txt 🤖
-- [x] Atom & Json feeds 📡
-- [x] Sass 
-- [x] About page, with Timeline! 🗣️
-- [x] PageSpeed and w3Validator tests PASSED ✔️
-- [x] Search bar 🔎
-- [x] Next & Previous Post ⏮️ ⏭️
-- [x] Automatic/Manual reading time estimation 🕐
+<a href="http://simpleyyt.github.io/jekyll-theme-next/" target="_blank">在线预览 Preview</a> | <a href="http://simpleyyt.com" target="_blank">Yitao's Blog</a> | <a href="http://theme-next.simpleyyt.com" target="_blank">NexT 使用文档</a> |  [English Documentation](README.en.md)
 
-## Backlogs
+[![Join the chat at https://gitter.im/simpleyyt/jekyll-theme-next](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jekyll-theme-next/lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-- [ ] Improve SEO score on [Lighthouse](lighthouse_test.png) 
+![NexT Schemes](http://iissnan.com/nexus/next/next-schemes.jpg)
 
 
+## 浏览器支持 Browser support
 
-## Screenshot
-
-![light-theme](https://github.com/P0WEX/Gesko/blob/master/light-theme.jpg)
-![dark-theme](https://github.com/P0WEX/Gesko/blob/master/dark-theme.jpg)
-
-## Installation
-
-Run local server:
-
-```bash
-$ git clone https://github.com/P0WEX/Gesko.git
-$ cd Gesko
-$ bundle install
-$ bundle exec jekyll build
-$ bundle exec jekyll serve
-```
-
-Navigate to `localhost:4000`. You're Welcome, Fork and be Stargazer.
-If you want to upload it to Github Pages, remember to update the `_congif.yml` and if you are going to upload in a repo called yournickname.github.io, remember to update the `{{ site.baseurl }}` to `{{ site.url }}` .
-Note that there is also a gtag in the [`_layouts/default.html`](https://github.com/P0WEX/Gesko/blob/6776e4afc384dc3d50ce2001715929c8e70a914c/_layouts/default.html#L9), you should remove it.
-
-To create new tag, create a folder in `tag/` with the name of the new one. In this folder add an `index.html` file and just add this header:
-```
----
-layout: tag
-tag: yourNewTag
----
-```
-Then build again and you're ready!!
-
-## Contributing
-
-Yeaaa feel free to open a pull request.
+![Browser support](http://iissnan.com/nexus/next/browser-support.png)
 
 
-If you see any typos or formatting errors in a post, or want to helping reduce backlogs or any other issue that needs to be addressed, please do not hesitate to open a pull request and fix it!, please read [contributing](./CONTRIBUTING.md) before PR.
+## 贡献 Contributing
 
-## License
+欢迎提交问题与需求，修复代码。
 
-This project is open source and available under the [MIT License](LICENSE.md).
+
+## 开发 Development
+
+NexT 主旨在于简洁优雅且易于使用，所以首先要尽量确保 NexT 的简洁易用性。
+
+NexT is built for easily use with elegant appearance. First things first, always keep things simple.
+
+
+## 捐赠
+
+支付宝捐赠链接还是要有的，万一真的有人捐呢。
+
+![支付宝扫码捐赠](http://7lryc0.com1.z0.glb.clouddn.com/a6x049034plyvjm1rvn4h28%20%281%29.png)
