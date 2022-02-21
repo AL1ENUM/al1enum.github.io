@@ -88,8 +88,8 @@ plot_admin@plotted:~$ find / -perm -u=s -type f 2>/dev/null
 <snip>
 ```
 
-Resource : https://book.hacktricks.xyz/linux-unix/privilege-escalation#doas
-Resource : https://gtfobins.github.io/gtfobins/openssl/#file-read
+- Resource : https://book.hacktricks.xyz/linux-unix/privilege-escalation#doas
+- Resource : https://gtfobins.github.io/gtfobins/openssl/#file-read
 
 ```bash
 permit nopass plot_admin as root cmd openssl
