@@ -5,6 +5,8 @@ categories: [tryhackme]
 tags: [linux]
 ---
 
+You can find this machine here : https://tryhackme.com/room/plottedtms
+
 ### Port Scan
 
 ```bash
