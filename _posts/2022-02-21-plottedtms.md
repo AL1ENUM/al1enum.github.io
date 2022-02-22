@@ -2,7 +2,7 @@
 layout: post
 title:  "Plotted TMS"
 categories: [tryhackme]
-tags: [linux]
+tags: [linux,TMS,RCE,doas,openssl,crontab]
 ---
 
 You can find this machine here : https://tryhackme.com/room/plottedtms
